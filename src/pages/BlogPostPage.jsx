@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import { getBlogBySlug, getBlogsData } from '../services/dataService';
 import './BlogPostPage.css';
 
 function BlogPostPage() {
@@ -11,10 +12,11 @@ function BlogPostPage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('/data/blogs.json')
-      .then(response => response.json())
-      .then(data => {
-        const foundPost = data.blogs.find(blog => blog.slug === slug);
+    Promise.all([
+      getBlogBySlug(slug),
+      getBlogsData()
+    ])
+      .then(([foundPost, data]) => {
         if (foundPost) {
           setPost(foundPost);
           

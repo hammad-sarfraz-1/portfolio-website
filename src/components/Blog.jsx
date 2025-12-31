@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import { getBlogsData } from '../services/dataService';
 import './Blog.css';
 
 function Blog() {
@@ -11,8 +12,7 @@ function Blog() {
   const [filteredBlogs, setFilteredBlogs] = useState([]);
 
   useEffect(() => {
-    fetch('/data/blogs.json')
-      .then(response => response.json())
+    getBlogsData()
       .then(data => {
         setBlogs(data.blogs || []);
         setCategories(data.categories || []);

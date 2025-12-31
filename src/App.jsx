@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import YouTubePage from './pages/YouTubePage';
 import BlogPage from './pages/BlogPage';
 import BlogPostPage from './pages/BlogPostPage';
+import { getPortfolioData } from './services/dataService';
 import './App.css';
 
 function App() {
@@ -14,14 +15,8 @@ function App() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    // Fetch portfolio data from JSON file
-    fetch('/data/portfolio.json')
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Failed to load portfolio data');
-        }
-        return response.json();
-      })
+    // Fetch portfolio data from GitHub (with local fallback)
+    getPortfolioData()
       .then(data => {
         setPortfolioData(data);
         setLoading(false);
