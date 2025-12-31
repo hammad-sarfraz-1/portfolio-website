@@ -4,12 +4,12 @@ const Experience = ({ experience }) => {
     if (!experience || experience.length === 0) return null;
 
     return (
-        <section className="section section-dark" id="experience">
+        <section className="section section-dark" id="experience" aria-labelledby="experience-title">
             <div className="container">
-                <h2 className="section-title">Professional Experience</h2>
-                <div className="timeline">
+                <h2 id="experience-title" className="section-title">Professional Experience</h2>
+                <div className="timeline" role="list">
                     {experience.map((exp, index) => (
-                        <div key={index} className="timeline-item">
+                        <article key={index} className="timeline-item" role="listitem">
                             <div className="timeline-content">
                                 <div className="timeline-header">
                                     <h3 className="timeline-company">{exp.company}</h3>
@@ -24,7 +24,7 @@ const Experience = ({ experience }) => {
                                     ))}
                                 </ul>
                             </div>
-                        </div>
+                        </article>
                     ))}
                 </div>
             </div>

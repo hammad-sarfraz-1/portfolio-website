@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import Navigation from './components/Navigation';
 import Home from './pages/Home';
 import YouTubePage from './pages/YouTubePage';
@@ -50,21 +51,23 @@ function App() {
   if (!portfolioData) return null;
 
   return (
-    <Router>
-      <div className="App">
-        <Navigation portfolioData={portfolioData} />
-        <Routes>
-          <Route path="/" element={<Home portfolioData={portfolioData} />} />
-          <Route path="/youtube" element={<YouTubePage />} />
-        </Routes>
+    <HelmetProvider>
+      <Router>
+        <div className="App">
+          <Navigation portfolioData={portfolioData} />
+          <Routes>
+            <Route path="/" element={<Home portfolioData={portfolioData} />} />
+            <Route path="/youtube" element={<YouTubePage />} />
+          </Routes>
 
-        <footer className="footer">
-          <div className="container">
-            <p>© 2024 {portfolioData.personal?.name}. Built with ❤️ using React</p>
-          </div>
-        </footer>
-      </div>
-    </Router>
+          <footer className="footer">
+            <div className="container">
+              <p>© 2024 {portfolioData.personal?.name}. Built with ❤️ using React</p>
+            </div>
+          </footer>
+        </div>
+      </Router>
+    </HelmetProvider>
   );
 }
 

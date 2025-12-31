@@ -4,12 +4,12 @@ const Projects = ({ projects }) => {
     if (!projects || projects.length === 0) return null;
 
     return (
-        <section className="section" id="projects">
+        <section className="section" id="projects" aria-labelledby="projects-title">
             <div className="container">
-                <h2 className="section-title">Featured Projects</h2>
-                <div className="projects-grid">
+                <h2 id="projects-title" className="section-title">Featured Projects</h2>
+                <div className="projects-grid" role="list">
                     {projects.map((project, index) => (
-                        <div key={index} className="project-card">
+                        <article key={index} className="project-card" role="listitem">
                             <h3 className="project-name">{project.name}</h3>
                             <p className="project-description">{project.description}</p>
 
@@ -49,7 +49,7 @@ const Projects = ({ projects }) => {
                                     </a>
                                 )}
                             </div>
-                        </div>
+                        </article>
                     ))}
                 </div>
             </div>

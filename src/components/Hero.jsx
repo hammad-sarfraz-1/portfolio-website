@@ -41,9 +41,9 @@ const Hero = ({ personal, social }) => {
             <div className="container">
                 <div className="hero-content">
                     <div className="hero-text">
-                        <div className="hero-greeting">Hello, I'm</div>
+                        <p className="hero-greeting">Hello, I'm</p>
                         <h1 className="hero-name">{personal.name}</h1>
-                        <p className="hero-title">{personal.title}</p>
+                        <h2 className="hero-title">{personal.title}</h2>
                         <p className="hero-bio">{personal.bio}</p>
                         <div className="hero-actions">
                             <a href="#contact" className="btn btn-primary">Get in Touch</a>

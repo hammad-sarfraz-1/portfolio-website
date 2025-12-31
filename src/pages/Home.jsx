@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 import './Home.css';
 
 // Import existing components
@@ -11,8 +12,49 @@ import Education from '../components/Education';
 import Contact from '../components/Contact';
 
 function Home({ portfolioData }) {
+  // Generate structured data for SEO
+  const getSkillsList = () => {
+    if (!portfolioData.skills) return [];
+    return Object.values(portfolioData.skills).flat();
+  };
+
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Muhammad Kamal",
+    "alternateName": ["oykamal", "oyekamal", "kamal"],
+    "jobTitle": "Senior Backend Engineer",
+    "description": portfolioData.personal?.bio,
+    "url": "https://oykamal.com",
+    "image": portfolioData.personal?.image,
+    "email": portfolioData.personal?.email,
+    "telephone": portfolioData.personal?.phone,
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Islamabad",
+      "addressCountry": "Pakistan"
+    },
+    "sameAs": portfolioData.social?.map(s => s.url) || [],
+    "knowsAbout": getSkillsList(),
+    "alumniOf": portfolioData.education?.map(edu => ({
+      "@type": "EducationalOrganization",
+      "name": edu.institution
+    })) || [],
+    "worksFor": portfolioData.experience?.[0] ? {
+      "@type": "Organization",
+      "name": portfolioData.experience[0].company
+    } : undefined
+  };
+
   return (
     <div className="home-page">
+      <SEO
+        title="oykamal - Muhammad Kamal | Senior Backend Engineer | Python Django PostgreSQL AWS"
+        description="oykamal (Muhammad Kamal) - Senior Backend Engineer with 4+ years experience. Expert in Python, Django, DRF, PostgreSQL, AWS, Kafka, Redis. Building scalable production systems in Islamabad, Pakistan."
+        name="oykamal"
+        keywords="oykamal, oyekamal, Muhammad Kamal, kamal backend engineer, python backend developer, django developer pakistan, senior backend engineer, python django postgresql, aws developer, backend engineer islamabad"
+        structuredData={structuredData}
+      />
       <Hero
         personal={portfolioData.personal}
         social={portfolioData.social}

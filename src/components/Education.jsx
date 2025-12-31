@@ -4,13 +4,13 @@ const Education = ({ education, certifications }) => {
     if (!education || education.length === 0) return null;
 
     return (
-        <section className="section" id="education">
+        <section className="section" id="education" aria-labelledby="education-title">
             <div className="container">
-                <h2 className="section-title">Education & Certifications</h2>
+                <h2 id="education-title" className="section-title">Education & Certifications</h2>
 
                 <div className="education-grid">
                     {education.map((edu, index) => (
-                        <div key={index} className="education-card">
+                        <article key={index} className="education-card">
                             <h3 className="education-degree">{edu.degree}</h3>
                             <p className="education-institution">{edu.institution}</p>
                             <p className="education-meta">
@@ -19,7 +19,7 @@ const Education = ({ education, certifications }) => {
                             {edu.details && (
                                 <p className="education-details">{edu.details}</p>
                             )}
-                        </div>
+                        </article>
                     ))}
                 </div>
 

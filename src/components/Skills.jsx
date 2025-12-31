@@ -4,9 +4,9 @@ const Skills = ({ skills }) => {
     if (!skills) return null;
 
     return (
-        <section className="section section-dark" id="skills">
+        <section className="section section-dark" id="skills" aria-labelledby="skills-title">
             <div className="container">
-                <h2 className="section-title">Skills & Technologies</h2>
+                <h2 id="skills-title" className="section-title">Skills & Technologies</h2>
                 <div className="skills-container">
                     {Object.entries(skills).map(([categoryName, skillsList]) => (
                         <div key={categoryName} className="skills-category">
