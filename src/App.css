@@ -147,6 +147,7 @@ body {
   position: relative;
   cursor: pointer;
   transition: all var(--transition-base);
+  text-decoration: none;
 }
 
 .nav-logo:hover {
@@ -167,6 +168,14 @@ body {
   font-size: var(--font-size-sm);
   transition: var(--transition-fast);
   position: relative;
+}
+
+.nav-link.active {
+  color: var(--text-light);
+}
+
+.nav-link.active::after {
+  width: 100%;
 }
 
 .nav-link::after {

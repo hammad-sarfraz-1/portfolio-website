@@ -1,25 +1,41 @@
 import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { generateCV } from '../services/pdfGenerator';
 
 const Navigation = ({ portfolioData }) => {
+    const location = useLocation();
+    const isYouTubePage = location.pathname === '/youtube';
+
     const handleDownloadCV = () => {
         if (portfolioData) {
             generateCV(portfolioData);
         }
     };
 
+    const scrollToSection = (sectionId) => {
+        if (location.pathname !== '/') {
+            window.location.href = `/#${sectionId}`;
+        } else {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    };
+
     return (
         <nav className="nav" id="nav">
             <div className="nav-container">
-                <div className="nav-logo">{portfolioData?.personal?.brandName || 'Portfolio'}</div>
+                <Link to="/" className="nav-logo">{portfolioData?.personal?.brandName || 'Portfolio'}</Link>
                 <ul className="nav-menu">
-                    <li><a href="#home" className="nav-link">Home</a></li>
-                    <li><a href="#about" className="nav-link">About</a></li>
-                    <li><a href="#experience" className="nav-link">Experience</a></li>
-                    <li><a href="#projects" className="nav-link">Projects</a></li>
-                    <li><a href="#skills" className="nav-link">Skills</a></li>
-                    <li><a href="#education" className="nav-link">Education</a></li>
-                    <li><a href="#contact" className="nav-link">Contact</a></li>
+                    <li><a href="/#home" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('home'); }}>Home</a></li>
+                    <li><a href="/#about" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('about'); }}>About</a></li>
+                    <li><a href="/#experience" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('experience'); }}>Experience</a></li>
+                    <li><a href="/#projects" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('projects'); }}>Projects</a></li>
+                    <li><a href="/#skills" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('skills'); }}>Skills</a></li>
+                    <li><a href="/#education" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('education'); }}>Education</a></li>
+                    <li><Link to="/youtube" className={`nav-link ${isYouTubePage ? 'active' : ''}`}>YouTube</Link></li>
+                    <li><a href="/#contact" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }}>Contact</a></li>
                 </ul>
                 <button className="btn btn-primary" onClick={handleDownloadCV}>
                     <span className="btn-icon">📄</span>

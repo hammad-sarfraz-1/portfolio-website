@@ -1,12 +1,8 @@
 import { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navigation from './components/Navigation';
-import Hero from './components/Hero';
-import About from './components/About';
-import Experience from './components/Experience';
-import Projects from './components/Projects';
-import Skills from './components/Skills';
-import Education from './components/Education';
-import Contact from './components/Contact';
+import Home from './pages/Home';
+import YouTubePage from './pages/YouTubePage';
 import './App.css';
 
 function App() {
@@ -54,31 +50,21 @@ function App() {
   if (!portfolioData) return null;
 
   return (
-    <div className="App">
-      <Navigation portfolioData={portfolioData} />
-      <Hero
-        personal={portfolioData.personal}
-        social={portfolioData.social}
-      />
-      <About bio={portfolioData.personal?.bio} />
-      <Experience experience={portfolioData.experience} />
-      <Projects projects={portfolioData.projects} />
-      <Skills skills={portfolioData.skills} />
-      <Education
-        education={portfolioData.education}
-        certifications={portfolioData.certifications}
-      />
-      <Contact
-        personal={portfolioData.personal}
-        portfolioData={portfolioData}
-      />
+    <Router>
+      <div className="App">
+        <Navigation portfolioData={portfolioData} />
+        <Routes>
+          <Route path="/" element={<Home portfolioData={portfolioData} />} />
+          <Route path="/youtube" element={<YouTubePage />} />
+        </Routes>
 
-      <footer className="footer">
-        <div className="container">
-          <p>© 2024 {portfolioData.personal?.name}. Built with ❤️ using React</p>
-        </div>
-      </footer>
-    </div>
+        <footer className="footer">
+          <div className="container">
+            <p>© 2024 {portfolioData.personal?.name}. Built with ❤️ using React</p>
+          </div>
+        </footer>
+      </div>
+    </Router>
   );
 }
 
