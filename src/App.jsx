@@ -4,6 +4,8 @@ import { HelmetProvider } from 'react-helmet-async';
 import Navigation from './components/Navigation';
 import Home from './pages/Home';
 import YouTubePage from './pages/YouTubePage';
+import BlogPage from './pages/BlogPage';
+import BlogPostPage from './pages/BlogPostPage';
 import './App.css';
 
 function App() {
@@ -58,6 +60,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Home portfolioData={portfolioData} />} />
             <Route path="/youtube" element={<YouTubePage />} />
+            <Route path="/blog" element={<BlogPage />} />
+            <Route path="/blog/:slug" element={<BlogPostPage />} />
           </Routes>
 
           <footer className="footer">

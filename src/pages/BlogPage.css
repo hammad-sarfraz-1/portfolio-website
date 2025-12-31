@@ -1,0 +1,5 @@
+.blog-page {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #0f172a, #1e293b);
+  padding-top: 80px;
+}
