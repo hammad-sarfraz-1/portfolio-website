@@ -1,6 +1,7 @@
 {
   "personal": {
     "name": "Muhammad Kamal",
+    "brandName": "oykamal",
     "title": "Senior Backend Engineer | Python • Django • Scalable Systems",
     "email": "oyekamalkhan@gmail.com",
     "phone": "+92 336 0506129",
@@ -34,11 +35,6 @@
       "platform": "X (Twitter)",
       "url": "https://x.com/oykamal",
       "icon": "twitter"
-    },
-    {
-      "platform": "Portfolio",
-      "url": "https://oyekamal.github.io/oykamal/",
-      "icon": "globe"
     }
   ],
 

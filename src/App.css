@@ -135,9 +135,23 @@ body {
 }
 
 .nav-logo {
-  font-size: var(--font-size-xl);
-  font-weight: 700;
-  color: var(--text-light);
+  font-size: var(--font-size-2xl);
+  font-weight: 800;
+  background: linear-gradient(135deg, #ffffff, #60A5FA, #34D399);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 0.5px;
+  text-transform: lowercase;
+  font-family: 'Inter', monospace;
+  position: relative;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.nav-logo:hover {
+  transform: scale(1.05);
+  filter: brightness(1.2);
 }
 
 .nav-menu {

@@ -11,7 +11,7 @@ const Navigation = ({ portfolioData }) => {
     return (
         <nav className="nav" id="nav">
             <div className="nav-container">
-                <div className="nav-logo">Portfolio</div>
+                <div className="nav-logo">{portfolioData?.personal?.brandName || 'Portfolio'}</div>
                 <ul className="nav-menu">
                     <li><a href="#home" className="nav-link">Home</a></li>
                     <li><a href="#about" className="nav-link">About</a></li>
