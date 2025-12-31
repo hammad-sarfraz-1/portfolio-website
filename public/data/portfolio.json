@@ -17,8 +17,23 @@
     },
     {
       "platform": "LinkedIn",
-      "url": "https://www.linkedin.com/in/oykamal",
+      "url": "https://www.linkedin.com/in/oykamal/",
       "icon": "linkedin"
+    },
+    {
+      "platform": "Instagram",
+      "url": "https://instagram.com/oykamal",
+      "icon": "instagram"
+    },
+    {
+      "platform": "YouTube",
+      "url": "https://youtube.com/@oykamal",
+      "icon": "youtube"
+    },
+    {
+      "platform": "X (Twitter)",
+      "url": "https://x.com/oykamal",
+      "icon": "twitter"
     },
     {
       "platform": "Portfolio",

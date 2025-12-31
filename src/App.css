@@ -284,8 +284,8 @@ body {
 }
 
 .social-link {
-  width: 48px;
-  height: 48px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
   background: var(--bg-card);
   border: 1px solid #E5E7EB;
@@ -294,7 +294,7 @@ body {
   justify-content: center;
   color: var(--text-secondary);
   text-decoration: none;
-  font-size: var(--font-size-lg);
+  font-size: 1.5rem;
   transition: all var(--transition-base);
   box-shadow: var(--bg-card-shadow);
 }
@@ -305,6 +305,43 @@ body {
   color: white;
   transform: translateY(-4px);
   box-shadow: 0 6px 20px rgba(59, 130, 246, 0.3);
+}
+
+/* Platform-specific hover colors */
+.social-link[title="GitHub"]:hover {
+  background: #181717;
+  border-color: #181717;
+  box-shadow: 0 6px 20px rgba(24, 23, 23, 0.4);
+}
+
+.social-link[title="LinkedIn"]:hover {
+  background: #0A66C2;
+  border-color: #0A66C2;
+  box-shadow: 0 6px 20px rgba(10, 102, 194, 0.4);
+}
+
+.social-link[title="Instagram"]:hover {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  border-color: #e6683c;
+  box-shadow: 0 6px 20px rgba(225, 48, 108, 0.4);
+}
+
+.social-link[title="YouTube"]:hover {
+  background: #FF0000;
+  border-color: #FF0000;
+  box-shadow: 0 6px 20px rgba(255, 0, 0, 0.4);
+}
+
+.social-link[title="X (Twitter)"]:hover {
+  background: #000000;
+  border-color: #000000;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.social-link[title="Portfolio"]:hover {
+  background: var(--secondary);
+  border-color: var(--secondary);
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
 }
 
 .hero-image {
