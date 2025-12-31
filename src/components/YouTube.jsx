@@ -1,32 +1,19 @@
 import './YouTube.css';
+import { useState, useEffect } from 'react';
 
 function YouTube() {
-  const channels = [
-    {
-      id: 1,
-      handle: '@oykamal',
-      name: 'oykamal',
-      description: 'Daily blogs, tech insights, career advice, and personal vlogs about life as a software engineer.',
-      url: 'https://www.youtube.com/@oykamal',
-      shortsUrl: 'https://www.youtube.com/@oykamal/shorts',
-      videosUrl: 'https://www.youtube.com/@oykamal/videos',
-      avatar: 'https://yt3.googleusercontent.com/ytc/AIdro_nAd2n4RYvn7WkEw_BKP6bE1o0zRIoMHCAEEeGd_N-C4gM=s160-c-k-c0x00ffffff-no-rj',
-      theme: 'linear-gradient(135deg, #ff0000, #cc0000)',
-      topics: ['Daily Vlogs', 'Tech Insights', 'Career Tips', 'Lifestyle']
-    },
-    {
-      id: 2,
-      handle: '@kamalkecoding',
-      name: 'Kamal Ke Coding',
-      description: 'Deep-dive coding tutorials, programming tips, software development best practices, and hands-on code walkthroughs.',
-      url: 'https://www.youtube.com/@kamalkecoding',
-      shortsUrl: 'https://www.youtube.com/@kamalkecoding/shorts',
-      videosUrl: 'https://www.youtube.com/@kamalkecoding/videos',
-      avatar: 'https://yt3.googleusercontent.com/ytc/AIdro_nAd2n4RYvn7WkEw_BKP6bE1o0zRIoMHCAEEeGd_N-C4gM=s160-c-k-c0x00ffffff-no-rj',
-      theme: 'linear-gradient(135deg, #00d4ff, #0099cc)',
-      topics: ['Code Tutorials', 'Best Practices', 'Live Coding', 'Tech Stack']
-    }
-  ];
+  const [channels, setChannels] = useState([]);
+
+  useEffect(() => {
+    fetch('/data/portfolio.json')
+      .then(response => response.json())
+      .then(data => {
+        if (data.youtube && data.youtube.channels) {
+          setChannels(data.youtube.channels);
+        }
+      })
+      .catch(error => console.error('Error loading YouTube data:', error));
+  }, []);
 
   return (
     <section id="youtube" className="youtube-section">
