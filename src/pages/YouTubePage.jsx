@@ -20,7 +20,7 @@ function YouTubePage() {
         title="YouTube Channels - Muhammad Kamal | Tech Content & Coding Tutorials"
         description="Discover my YouTube channels featuring tech insights, coding tutorials, career advice, and lifestyle content. Subscribe to @oykamal and @kamalkecoding for daily updates."
         name="Muhammad Kamal"
-        url="https://oykamal.com/youtube"
+        url="https://oykamal.netlify.app/youtube"
         structuredData={structuredData}
       />
       <YouTube />

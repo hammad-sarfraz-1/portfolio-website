@@ -1,4 +1,4 @@
-# SEO Checklist for oykamal.com
+# SEO Checklist for oykamal.netlify.app
 
 ## ✅ Already Implemented
 - [x] Meta tags with "oykamal" brand name prioritized
@@ -9,22 +9,23 @@
 - [x] Open Graph tags for social sharing
 - [x] Twitter Card tags
 - [x] Multiple alternate names in structured data
+- [x] **Deployed to Netlify**: https://oykamal.netlify.app
 
 ## 🎯 Critical Next Steps for Ranking
 
 ### 1. **Domain & Hosting** (MOST IMPORTANT)
 - [ ] Purchase domain: **oykamal.com** or **oyekamal.com**
-- [ ] Deploy website to production (Vercel, Netlify, or your own server)
-- [ ] Set up HTTPS/SSL certificate
+- [x] Deploy website to production (Netlify) - ✅ **DONE**
+- [x] Set up HTTPS/SSL certificate - ✅ **DONE (Netlify auto-SSL)**
 - [ ] Verify domain in Google Search Console
 
 ### 2. **Google Search Console** (Required for indexing)
 ```bash
 # After deployment:
 1. Go to https://search.google.com/search-console
-2. Add property: oykamal.com
+2. Add property: oykamal.netlify.app (or custom domain when ready)
 3. Verify ownership (HTML file method or DNS)
-4. Submit sitemap: https://oykamal.com/sitemap.xml
+4. Submit sitemap: https://oykamal.netlify.app/sitemap.xml
 5. Request indexing for main pages
 ```
 
@@ -36,7 +37,8 @@
 
 ### 4. **Backlinks & Social Presence** (Critical for ranking)
 - [ ] Update GitHub profile: https://github.com/oyekamal
-  - Add oykamal.com to website field
+  - Add oykamal.netlify.app to website field (or custom domain when ready)
+  - Update bio to mention "oykamal"
   - Update bio to mention "oykamal"
 - [ ] Update LinkedIn: https://www.linkedin.com/in/oykamal/
   - Add custom URL: linkedin.com/in/oykamal
@@ -134,17 +136,17 @@ Create content with these titles/keywords:
 
 ## ⚠️ Important Notes
 
-1. **Domain is critical** - Without owning oykamal.com, you can't rank for "oykamal"
-2. **HTTPS is required** - Google penalizes non-HTTPS sites
+1. **Domain is critical** - Without owning oykamal.com, you can't rank for "oykamal" (Currently using oykamal.netlify.app)
+2. **HTTPS is required** - Google penalizes non-HTTPS sites ✅ **DONE (Netlify auto-SSL)**
 3. **Mobile-first** - Google indexes mobile version first (you're good here)
 4. **Content is king** - More quality content = better rankings
 5. **Patience** - SEO takes 3-6 months to show significant results
 
 ## 🎯 Priority Actions (Do Today)
 
-1. Buy domain: oykamal.com
-2. Deploy to production (Vercel/Netlify - free)
-3. Submit to Google Search Console
+1. Buy domain: oykamal.com (optional - currently using oykamal.netlify.app)
+2. ✅ **Deploy to production** - DONE (Netlify)
+3. Submit to Google Search Console (use oykamal.netlify.app for now)
 4. Update GitHub, LinkedIn, Twitter profiles
 5. Share website on social media
 

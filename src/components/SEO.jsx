@@ -6,7 +6,7 @@ const SEO = ({
   description, 
   name, 
   type = 'website',
-  url = 'https://oykamal.com/',
+  url = 'https://oykamal.netlify.app/',
   image = 'https://ui-avatars.com/api/?name=Muhammad+Kamal&size=1200&background=111827&color=ffffff',
   keywords = 'Muhammad Kamal, oykamal, Backend Engineer, Python Developer, Django, DRF, PostgreSQL, AWS, Software Engineer',
   structuredData

@@ -25,7 +25,7 @@ function Home({ portfolioData }) {
     "alternateName": ["oykamal", "oyekamal", "kamal"],
     "jobTitle": "Senior Backend Engineer",
     "description": portfolioData.personal?.bio,
-    "url": "https://oykamal.com",
+    "url": "https://oykamal.netlify.app",
     "image": portfolioData.personal?.image,
     "email": portfolioData.personal?.email,
     "telephone": portfolioData.personal?.phone,

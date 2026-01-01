@@ -62,7 +62,7 @@ Add a new blog object to the `blogs` array:
     "metaDescription": "Your meta description for search engines (150-160 characters)",
     "keywords": ["keyword1", "keyword2", "keyword3"],
     "ogImage": "https://images.unsplash.com/photo-xxxxx?w=1200&q=80",
-    "canonicalUrl": "https://oykamal.com/blog/your-blog-url-slug"
+    "canonicalUrl": "https://oykamal.netlify.app/blog/your-blog-url-slug"
   }
 }
 ```
@@ -80,7 +80,7 @@ Add the new blog URL to `public/sitemap.xml`:
 
 ```xml
 <url>
-  <loc>https://oykamal.com/blog/your-blog-url-slug</loc>
+  <loc>https://oykamal.netlify.app/blog/your-blog-url-slug</loc>
   <lastmod>2025-01-01</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.8</priority>

@@ -81,12 +81,12 @@ function BlogPostPage() {
     "author": {
       "@type": "Person",
       "name": post.author,
-      "url": "https://oykamal.com"
+      "url": "https://oykamal.netlify.app"
     },
     "publisher": {
       "@type": "Person",
       "name": "Muhammad Kamal",
-      "url": "https://oykamal.com"
+      "url": "https://oykamal.netlify.app"
     },
     "mainEntityOfPage": {
       "@type": "WebPage",

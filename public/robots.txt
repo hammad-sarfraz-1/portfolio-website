@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: https://oykamal.com/sitemap.xml
+Sitemap: https://oykamal.netlify.app/sitemap.xml

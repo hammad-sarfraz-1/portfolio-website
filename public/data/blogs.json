@@ -74,7 +74,7 @@
         "metaDescription": "Master Django performance optimization with proven techniques for database queries, caching, and scaling. Learn from real production experience.",
         "keywords": ["django optimization", "django performance", "python django", "database optimization", "redis caching", "django production"],
         "ogImage": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1200&q=80",
-        "canonicalUrl": "https://oykamal.com/blog/django-performance-optimization-tips"
+        "canonicalUrl": "https://oykamal.netlify.app/blog/django-performance-optimization-tips"
       }
     },
     {
@@ -98,7 +98,7 @@
         "metaDescription": "Execute PostgreSQL migrations on millions of rows without downtime. Learn production-tested strategies for data integrity and service availability.",
         "keywords": ["zero downtime migration", "postgresql migration", "database migration", "production database", "data integrity", "devops"],
         "ogImage": "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=1200&q=80",
-        "canonicalUrl": "https://oykamal.com/blog/zero-downtime-database-migrations"
+        "canonicalUrl": "https://oykamal.netlify.app/blog/zero-downtime-database-migrations"
       }
     },
     {
@@ -122,7 +122,7 @@
         "metaDescription": "Learn to build robust CI/CD pipelines using AWS and Docker. Reduce deployment failures with proven DevOps practices and automation strategies.",
         "keywords": ["aws cicd", "docker deployment", "cicd pipeline", "aws devops", "continuous integration", "continuous deployment"],
         "ogImage": "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=1200&q=80",
-        "canonicalUrl": "https://oykamal.com/blog/aws-cicd-pipeline-best-practices"
+        "canonicalUrl": "https://oykamal.netlify.app/blog/aws-cicd-pipeline-best-practices"
       }
     },
     {
@@ -146,7 +146,7 @@
         "metaDescription": "Career roadmap for Python backend engineers. Learn essential skills and strategies for growing from junior to senior level.",
         "keywords": ["python backend career", "backend engineer guide", "software engineering career", "python developer", "career growth", "backend development"],
         "ogImage": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80",
-        "canonicalUrl": "https://oykamal.com/blog/python-backend-career-guide"
+        "canonicalUrl": "https://oykamal.netlify.app/blog/python-backend-career-guide"
       }
     },
     {
@@ -170,7 +170,7 @@
         "metaDescription": "Compare Kafka and RabbitMQ for event-driven systems. Learn trade-offs, use cases, and implementation patterns from production experience.",
         "keywords": ["kafka vs rabbitmq", "event driven architecture", "message queue", "microservices", "kafka", "rabbitmq", "system design"],
         "ogImage": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&q=80",
-        "canonicalUrl": "https://oykamal.com/blog/kafka-rabbitmq-event-driven-architecture"
+        "canonicalUrl": "https://oykamal.netlify.app/blog/kafka-rabbitmq-event-driven-architecture"
       }
     }
   ],

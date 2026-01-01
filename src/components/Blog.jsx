@@ -49,13 +49,13 @@ function Blog() {
         <title>Blog | Muhammad Kamal - Backend Engineering & Tech Insights</title>
         <meta name="description" content="Technical blog featuring insights on Django, Python, PostgreSQL, AWS, system design, and backend engineering best practices from production experience." />
         <meta name="keywords" content="backend engineering blog, django tutorials, python development, postgresql optimization, aws devops, system design, tech blog" />
-        <link rel="canonical" href="https://oykamal.com/blog" />
+        <link rel="canonical" href="https://oykamal.netlify.app/blog" />
         
         {/* Open Graph */}
         <meta property="og:title" content="Blog | Muhammad Kamal - Backend Engineering Insights" />
         <meta property="og:description" content="Technical articles on Django, Python, PostgreSQL, system design, and production engineering." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://oykamal.com/blog" />
+        <meta property="og:url" content="https://oykamal.netlify.app/blog" />
         
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
