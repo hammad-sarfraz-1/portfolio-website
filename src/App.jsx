@@ -61,7 +61,7 @@ function App() {
 
           <footer className="footer">
             <div className="container">
-              <p>© 2024 {portfolioData.personal?.name}. Built with ❤️ using React</p>
+              <p>© {new Date().getFullYear()} {portfolioData.personal?.name}. Built with ❤️ using React</p>
             </div>
           </footer>
         </div>

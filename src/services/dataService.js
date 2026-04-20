@@ -4,10 +4,9 @@
  */
 
 // GitHub raw content base URL
-// Replace with your actual GitHub repo URL
 // Format: https://raw.githubusercontent.com/USERNAME/REPO_NAME/BRANCH_NAME/
-const GITHUB_RAW_BASE_URL = import.meta.env.VITE_GITHUB_DATA_URL || 
-  'https://raw.githubusercontent.com/oyekamal/portfolio-data/main/';
+const GITHUB_RAW_BASE_URL = import.meta.env.VITE_GITHUB_DATA_URL ||
+  'https://raw.githubusercontent.com/hammad-sarfraz-1/portfolio-database/main/';
 
 // Fallback to local files if GitHub fetch fails
 const LOCAL_FALLBACK = true;

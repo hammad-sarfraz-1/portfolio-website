@@ -1,209 +1,3720 @@
 {
   "blogs": [
     {
-      "id": 1,
-      "slug": "django-performance-optimization-tips",
-      "title": "10 Django Performance Optimization Tips for Production",
-      "description": "Learn essential Django performance optimization techniques including database query optimization, caching strategies, and best practices for scaling Django applications in production environments.",
+      "id": 108,
+      "slug": "workday-ceo-eschenbach-departs-with-co-founder-aneel-bhusri-returning-as-ceo",
+      "title": "Workday\u00a0CEO Eschenbach departs, with co-founder Aneel Bhusri\u00a0returning as CEO",
+      "description": "Imported from RSS feed: Workday\u00a0CEO Eschenbach departs, with co-founder Aneel Bhusri\u00a0returning as CEO",
       "content": {
-        "introduction": "Performance optimization is crucial for Django applications in production. In this comprehensive guide, I'll share 10 proven techniques that helped me reduce API response times by 40% and handle thousands of concurrent users. These strategies are based on real production experience at scale.",
-        "sections": [
-          {
-            "heading": "1. Database Query Optimization",
-            "content": "The most common performance bottleneck in Django applications is inefficient database queries. Use select_related() for foreign key relationships and prefetch_related() for many-to-many relationships to reduce query count. Always check the number of queries with Django Debug Toolbar in development."
-          },
-          {
-            "heading": "2. Implement Redis Caching",
-            "content": "Redis caching can dramatically improve response times. Cache frequently accessed data like user sessions, API responses, and database query results. Use Django's cache framework with Redis backend for optimal performance. Set appropriate cache timeouts based on data volatility."
-          },
-          {
-            "heading": "3. Use Database Indexes Wisely",
-            "content": "Add indexes on fields frequently used in WHERE clauses, JOIN operations, and ORDER BY statements. However, don't over-index as it can slow down write operations. Use PostgreSQL's EXPLAIN ANALYZE to understand query execution plans."
-          },
-          {
-            "heading": "4. Optimize Django Middleware",
-            "content": "Review your middleware stack and remove unnecessary middleware. Order matters - place authentication middleware early to fail fast for unauthorized requests. Consider writing custom lightweight middleware for common operations."
-          },
-          {
-            "heading": "5. Use Celery for Async Tasks",
-            "content": "Move time-consuming operations like email sending, file processing, and external API calls to background tasks using Celery. This keeps your request-response cycle fast and improves user experience significantly."
-          },
-          {
-            "heading": "6. Enable Database Connection Pooling",
-            "content": "Use connection pooling with libraries like django-db-geventpool or pgbouncer to reuse database connections. This reduces the overhead of creating new connections for each request, especially important at scale."
-          },
-          {
-            "heading": "7. Optimize Static Files Delivery",
-            "content": "Use Django's collectstatic and serve static files through a CDN or web server like Nginx. Enable compression and browser caching. Consider using Django Compressor or Whitenoise for better static file handling."
-          },
-          {
-            "heading": "8. Implement API Response Pagination",
-            "content": "Always paginate large querysets in API responses. Use Django REST Framework's pagination classes to limit response sizes. This reduces memory usage and improves response times for list endpoints."
-          },
-          {
-            "heading": "9. Monitor with Prometheus and Grafana",
-            "content": "Set up monitoring to track response times, error rates, and database performance. Use django-prometheus for metrics export. Monitor query execution times and identify slow endpoints proactively."
-          },
-          {
-            "heading": "10. Use Django's select_for_update()",
-            "content": "When handling concurrent updates, use select_for_update() to prevent race conditions. This locks rows at the database level, ensuring data consistency in high-concurrency scenarios like inventory management."
-          }
-        ],
-        "conclusion": "Implementing these 10 optimization techniques can significantly improve your Django application's performance. Start with database query optimization and caching, as they typically provide the biggest gains. Remember to measure before and after each optimization to validate improvements.",
-        "keyTakeaways": [
-          "Use select_related() and prefetch_related() to optimize database queries",
-          "Implement Redis caching for frequently accessed data",
-          "Add database indexes strategically on frequently queried fields",
-          "Move time-consuming tasks to Celery background workers",
-          "Monitor performance with Prometheus and Grafana",
-          "Always paginate large API responses"
-        ]
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
       },
-      "excerpt": "Discover proven Django optimization techniques that reduced API latency by 40% in production systems handling thousands of daily active users.",
-      "author": "Muhammad Kamal",
-      "publishDate": "2024-12-15",
-      "lastModified": "2024-12-15",
-      "readTime": "8 min read",
-      "category": "Backend Development",
-      "tags": ["Django", "Python", "Performance", "Optimization", "PostgreSQL", "Redis", "Caching"],
-      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80",
-      "featured": true,
-      "views": 0,
-      "seo": {
-        "metaTitle": "10 Django Performance Optimization Tips for Production | Muhammad Kamal",
-        "metaDescription": "Master Django performance optimization with proven techniques for database queries, caching, and scaling. Learn from real production experience.",
-        "keywords": ["django optimization", "django performance", "python django", "database optimization", "redis caching", "django production"],
-        "ogImage": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1200&q=80",
-        "canonicalUrl": "https://oykamal.netlify.app/blog/django-performance-optimization-tips"
-      }
-    },
-    {
-      "id": 2,
-      "slug": "zero-downtime-database-migrations",
-      "title": "Zero-Downtime Database Migrations: A Production Guide",
-      "description": "A comprehensive guide to executing zero-downtime PostgreSQL migrations in production. Learn strategies for handling millions of rows while maintaining data integrity and service availability.",
-      "content": "Zero-downtime migrations are critical for production systems. Here's how I executed migrations involving millions of rows without any service interruption...",
-      "excerpt": "Learn battle-tested strategies for executing PostgreSQL migrations on millions of rows without downtime or data loss.",
-      "author": "Muhammad Kamal",
-      "publishDate": "2024-12-01",
-      "lastModified": "2024-12-01",
-      "readTime": "12 min read",
-      "category": "Database",
-      "tags": ["PostgreSQL", "Database Migration", "Zero Downtime", "DevOps", "Production", "Data Integrity"],
-      "image": "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=800&q=80",
-      "featured": true,
-      "views": 0,
-      "seo": {
-        "metaTitle": "Zero-Downtime Database Migrations Guide | PostgreSQL Production Best Practices",
-        "metaDescription": "Execute PostgreSQL migrations on millions of rows without downtime. Learn production-tested strategies for data integrity and service availability.",
-        "keywords": ["zero downtime migration", "postgresql migration", "database migration", "production database", "data integrity", "devops"],
-        "ogImage": "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=1200&q=80",
-        "canonicalUrl": "https://oykamal.netlify.app/blog/zero-downtime-database-migrations"
-      }
-    },
-    {
-      "id": 3,
-      "slug": "aws-cicd-pipeline-best-practices",
-      "title": "Building Robust CI/CD Pipelines with AWS and Docker",
-      "description": "Best practices for building reliable CI/CD pipelines using AWS services, Docker, and Git. Learn how to reduce deployment failures and automate your release process.",
-      "content": "In this guide, I'll share how we built a CI/CD pipeline that reduced deployment failures by 30% using AWS, Docker, and automated testing...",
-      "excerpt": "Build reliable CI/CD pipelines with AWS and Docker. Proven practices that reduced deployment failures by 30%.",
-      "author": "Muhammad Kamal",
-      "publishDate": "2024-11-20",
-      "lastModified": "2024-11-20",
-      "readTime": "10 min read",
-      "category": "DevOps",
-      "tags": ["AWS", "CI/CD", "Docker", "DevOps", "Automation", "Deployment", "Git"],
-      "image": "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=800&q=80",
+      "excerpt": "Workday\u00a0CEO Eschenbach departs, with co-founder Aneel Bhusri\u00a0returning as CEO",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-10",
+      "lastModified": "2026-02-10",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
       "featured": false,
       "views": 0,
       "seo": {
-        "metaTitle": "AWS CI/CD Pipeline Best Practices with Docker | DevOps Guide",
-        "metaDescription": "Learn to build robust CI/CD pipelines using AWS and Docker. Reduce deployment failures with proven DevOps practices and automation strategies.",
-        "keywords": ["aws cicd", "docker deployment", "cicd pipeline", "aws devops", "continuous integration", "continuous deployment"],
-        "ogImage": "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=1200&q=80",
-        "canonicalUrl": "https://oykamal.netlify.app/blog/aws-cicd-pipeline-best-practices"
-      }
+        "metaTitle": "Workday\u00a0CEO Eschenbach departs, with co-founder Aneel Bhusri\u00a0returning as CEO",
+        "metaDescription": "Workday\u00a0CEO Eschenbach departs, with co-founder Aneel Bhusri\u00a0returning as CEO",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/09/workday-ceo-eschenbach-departs-with-co-founder-aneel-bhusri-returning-as-ceo/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/09/workday-ceo-eschenbach-departs-with-co-founder-aneel-bhusri-returning-as-ceo/"
     },
     {
-      "id": 4,
-      "slug": "python-backend-career-guide",
-      "title": "From Junior to Senior: My Python Backend Engineering Journey",
-      "description": "A detailed career guide sharing my journey from junior to senior backend engineer. Learn about essential skills, challenges, and growth strategies in backend development.",
-      "content": "In this post, I share my 4+ year journey in backend engineering, the skills that mattered most, and advice for aspiring backend developers...",
-      "excerpt": "Career insights from a 4+ year journey in backend engineering. Essential skills, challenges, and growth strategies.",
-      "author": "Muhammad Kamal",
-      "publishDate": "2024-11-10",
-      "lastModified": "2024-11-10",
-      "readTime": "7 min read",
-      "category": "Career",
-      "tags": ["Career", "Python", "Backend Development", "Software Engineering", "Career Growth", "Learning"],
-      "image": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80",
+      "id": 107,
+      "slug": "harvey-reportedly-raising-at-11b-valuation-just-months-after-it-hit-8b",
+      "title": "Harvey reportedly raising at $11B valuation just months after it hit $8B",
+      "description": "Imported from RSS feed: Harvey reportedly raising at $11B valuation just months after it hit $8B",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "Harvey reportedly raising at $11B valuation just months after it hit $8B",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-10",
+      "lastModified": "2026-02-10",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
       "featured": false,
       "views": 0,
       "seo": {
-        "metaTitle": "Python Backend Engineer Career Guide | Junior to Senior Journey",
-        "metaDescription": "Career roadmap for Python backend engineers. Learn essential skills and strategies for growing from junior to senior level.",
-        "keywords": ["python backend career", "backend engineer guide", "software engineering career", "python developer", "career growth", "backend development"],
-        "ogImage": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80",
-        "canonicalUrl": "https://oykamal.netlify.app/blog/python-backend-career-guide"
-      }
+        "metaTitle": "Harvey reportedly raising at $11B valuation just months after it hit $8B",
+        "metaDescription": "Harvey reportedly raising at $11B valuation just months after it hit $8B",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/09/harvey-reportedly-raising-at-11b-valuation-just-months-after-it-hit-8b/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/09/harvey-reportedly-raising-at-11b-valuation-just-months-after-it-hit-8b/"
     },
     {
-      "id": 5,
-      "slug": "kafka-rabbitmq-event-driven-architecture",
-      "title": "Event-Driven Architecture: Kafka vs RabbitMQ in Production",
-      "description": "Compare Kafka and RabbitMQ for event-driven architectures. Learn when to use each, their trade-offs, and real-world implementation patterns from production experience.",
-      "content": "Choosing between Kafka and RabbitMQ can be challenging. Here's my experience implementing both in production systems...",
-      "excerpt": "Kafka vs RabbitMQ: Production comparison, trade-offs, and when to use each for event-driven systems.",
-      "author": "Muhammad Kamal",
-      "publishDate": "2024-10-25",
-      "lastModified": "2024-10-25",
-      "readTime": "9 min read",
-      "category": "System Design",
-      "tags": ["Kafka", "RabbitMQ", "Event-Driven Architecture", "Microservices", "System Design", "Message Queue"],
-      "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80",
+      "id": 106,
+      "slug": "so-what-s-going-on-with-musicboard",
+      "title": "So, what\u2019s going on with Musicboard?",
+      "description": "Imported from RSS feed: So, what\u2019s going on with Musicboard?",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "So, what\u2019s going on with Musicboard?",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-10",
+      "lastModified": "2026-02-10",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
       "featured": false,
       "views": 0,
       "seo": {
-        "metaTitle": "Kafka vs RabbitMQ: Event-Driven Architecture Guide | Production Comparison",
-        "metaDescription": "Compare Kafka and RabbitMQ for event-driven systems. Learn trade-offs, use cases, and implementation patterns from production experience.",
-        "keywords": ["kafka vs rabbitmq", "event driven architecture", "message queue", "microservices", "kafka", "rabbitmq", "system design"],
-        "ogImage": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&q=80",
-        "canonicalUrl": "https://oykamal.netlify.app/blog/kafka-rabbitmq-event-driven-architecture"
-      }
+        "metaTitle": "So, what\u2019s going on with Musicboard?",
+        "metaDescription": "So, what\u2019s going on with Musicboard?",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/09/so-whats-going-on-with-musicboard/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/09/so-whats-going-on-with-musicboard/"
+    },
+    {
+      "id": 105,
+      "slug": "lidar-maker-ouster-buys-vision-company-stereolabs-as-sensor-consolidation-continues",
+      "title": "Lidar-maker Ouster buys vision company StereoLabs as sensor consolidation continues",
+      "description": "Imported from RSS feed: Lidar-maker Ouster buys vision company StereoLabs as sensor consolidation continues",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "Lidar-maker Ouster buys vision company StereoLabs as sensor consolidation continues",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-10",
+      "lastModified": "2026-02-10",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "Lidar-maker Ouster buys vision company StereoLabs as sensor consolidation continues",
+        "metaDescription": "Lidar-maker Ouster buys vision company StereoLabs as sensor consolidation continues",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/09/lidar-maker-ouster-buys-vision-company-stereolabs-as-sensor-consolidation-continues/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/09/lidar-maker-ouster-buys-vision-company-stereolabs-as-sensor-consolidation-continues/"
+    },
+    {
+      "id": 104,
+      "slug": "chatgpt-rolls-out-ads",
+      "title": "ChatGPT rolls out ads",
+      "description": "Imported from RSS feed: ChatGPT rolls out ads",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "ChatGPT rolls out ads",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-10",
+      "lastModified": "2026-02-10",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "ChatGPT rolls out ads",
+        "metaDescription": "ChatGPT rolls out ads",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/09/chatgpt-rolls-out-ads/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/09/chatgpt-rolls-out-ads/"
+    },
+    {
+      "id": 103,
+      "slug": "anthropic-s-india-expansion-collides-with-a-local-company-that-already-had-the-name",
+      "title": "Anthropic\u2019s India expansion collides with a local company that already had the name",
+      "description": "Imported from RSS feed: Anthropic\u2019s India expansion collides with a local company that already had the name",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "Anthropic\u2019s India expansion collides with a local company that already had the name",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-10",
+      "lastModified": "2026-02-10",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "Anthropic\u2019s India expansion collides with a local company that already had the name",
+        "metaDescription": "Anthropic\u2019s India expansion collides with a local company that already had the name",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/09/anthropics-india-expansion-collides-with-a-local-company-that-already-had-the-name/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/09/anthropics-india-expansion-collides-with-a-local-company-that-already-had-the-name/"
+    },
+    {
+      "id": 102,
+      "slug": "databricks-ceo-says-saas-isn-t-dead-but-ai-will-soon-make-it-irrelevant",
+      "title": "Databricks CEO says SaaS isn\u2019t dead, but AI will soon make it irrelevant",
+      "description": "Imported from RSS feed: Databricks CEO says SaaS isn\u2019t dead, but AI will soon make it irrelevant",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "Databricks CEO says SaaS isn\u2019t dead, but AI will soon make it irrelevant",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-10",
+      "lastModified": "2026-02-10",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "Databricks CEO says SaaS isn\u2019t dead, but AI will soon make it irrelevant",
+        "metaDescription": "Databricks CEO says SaaS isn\u2019t dead, but AI will soon make it irrelevant",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/09/databricks-ceo-says-saas-isnt-dead-but-ai-will-soon-make-it-irrelevant/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/09/databricks-ceo-says-saas-isnt-dead-but-ai-will-soon-make-it-irrelevant/"
+    },
+    {
+      "id": 101,
+      "slug": "bluesky-finally-adds-drafts",
+      "title": "Bluesky finally adds drafts",
+      "description": "Imported from RSS feed: Bluesky finally adds drafts",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "Bluesky finally adds drafts",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-10",
+      "lastModified": "2026-02-10",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "Bluesky finally adds drafts",
+        "metaDescription": "Bluesky finally adds drafts",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/09/bluesky-finally-adds-drafts/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/09/bluesky-finally-adds-drafts/"
+    },
+    {
+      "id": 100,
+      "slug": "mrbeast-s-company-buys-gen-z-focused-fintech-app-step",
+      "title": "MrBeast\u2019s company buys Gen Z-focused fintech app Step",
+      "description": "Imported from RSS feed: MrBeast\u2019s company buys Gen Z-focused fintech app Step",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "MrBeast\u2019s company buys Gen Z-focused fintech app Step",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-10",
+      "lastModified": "2026-02-10",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "MrBeast\u2019s company buys Gen Z-focused fintech app Step",
+        "metaDescription": "MrBeast\u2019s company buys Gen Z-focused fintech app Step",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/09/mrbeasts-company-buys-gen-z-focused-fintech-app-step/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/09/mrbeasts-company-buys-gen-z-focused-fintech-app-step/"
+    },
+    {
+      "id": 99,
+      "slug": "waymo-is-testing-driverless-robotaxis-in-nashville",
+      "title": "Waymo is testing driverless robotaxis in Nashville",
+      "description": "Imported from RSS feed: Waymo is testing driverless robotaxis in Nashville",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "Waymo is testing driverless robotaxis in Nashville",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-10",
+      "lastModified": "2026-02-10",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "Waymo is testing driverless robotaxis in Nashville",
+        "metaDescription": "Waymo is testing driverless robotaxis in Nashville",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/09/waymo-is-testing-driverless-robotaxis-in-nashville/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/09/waymo-is-testing-driverless-robotaxis-in-nashville/"
+    },
+    {
+      "id": 98,
+      "slug": "india-has-changed-its-startup-rules-for-deep-tech",
+      "title": "India has changed its startup rules for deep tech",
+      "description": "Imported from RSS feed: India has changed its startup rules for deep tech",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "India has changed its startup rules for deep tech",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-09",
+      "lastModified": "2026-02-09",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "India has changed its startup rules for deep tech",
+        "metaDescription": "India has changed its startup rules for deep tech",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/07/india-has-changed-its-startup-rules-for-deep-tech/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/07/india-has-changed-its-startup-rules-for-deep-tech/"
+    },
+    {
+      "id": 97,
+      "slug": "san-francisco-s-pro-billionaire-march-draws-dozens",
+      "title": "San Francisco\u2019s pro-billionaire march draws dozens",
+      "description": "Imported from RSS feed: San Francisco\u2019s pro-billionaire march draws dozens",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "San Francisco\u2019s pro-billionaire march draws dozens",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-09",
+      "lastModified": "2026-02-09",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "San Francisco\u2019s pro-billionaire march draws dozens",
+        "metaDescription": "San Francisco\u2019s pro-billionaire march draws dozens",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/08/san-franciscos-pro-billionaire-march-draws-dozens/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/08/san-franciscos-pro-billionaire-march-draws-dozens/"
+    },
+    {
+      "id": 96,
+      "slug": "techcrunch-mobility-is-16b-enough-to-build-a-profitable-robotaxi-business",
+      "title": "TechCrunch Mobility: Is $16B enough to build a profitable robotaxi business?",
+      "description": "Imported from RSS feed: TechCrunch Mobility: Is $16B enough to build a profitable robotaxi business?",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "TechCrunch Mobility: Is $16B enough to build a profitable robotaxi business?",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-09",
+      "lastModified": "2026-02-09",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "TechCrunch Mobility: Is $16B enough to build a profitable robotaxi business?",
+        "metaDescription": "TechCrunch Mobility: Is $16B enough to build a profitable robotaxi business?",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/08/techcrunch-mobility-is-16b-enough-to-build-a-profitable-robotaxi-business/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/08/techcrunch-mobility-is-16b-enough-to-build-a-profitable-robotaxi-business/"
+    },
+    {
+      "id": 95,
+      "slug": "okay-i-m-slightly-less-mad-about-that-magnificent-ambersons-ai-project",
+      "title": "Okay, I\u2019m slightly less mad about that \u2018Magnificent Ambersons\u2019 AI project",
+      "description": "Imported from RSS feed: Okay, I\u2019m slightly less mad about that \u2018Magnificent Ambersons\u2019 AI project",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "Okay, I\u2019m slightly less mad about that \u2018Magnificent Ambersons\u2019 AI project",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-09",
+      "lastModified": "2026-02-09",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "Okay, I\u2019m slightly less mad about that \u2018Magnificent Ambersons\u2019 AI project",
+        "metaDescription": "Okay, I\u2019m slightly less mad about that \u2018Magnificent Ambersons\u2019 AI project",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/08/okay-im-slightly-less-mad-about-that-magnificent-ambersons-ai-project/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/08/okay-im-slightly-less-mad-about-that-magnificent-ambersons-ai-project/"
+    },
+    {
+      "id": 94,
+      "slug": "crypto-com-places-70m-bet-on-ai-com-domain-ahead-of-super-bowl",
+      "title": "Crypto.com places $70M bet on AI.com domain ahead of Super Bowl",
+      "description": "Imported from RSS feed: Crypto.com places $70M bet on AI.com domain ahead of Super Bowl",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "Crypto.com places $70M bet on AI.com domain ahead of Super Bowl",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-09",
+      "lastModified": "2026-02-09",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "Crypto.com places $70M bet on AI.com domain ahead of Super Bowl",
+        "metaDescription": "Crypto.com places $70M bet on AI.com domain ahead of Super Bowl",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/08/crypto-com-places-70m-bet-on-ai-com-domain-ahead-of-super-bowl/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/08/crypto-com-places-70m-bet-on-ai-com-domain-ahead-of-super-bowl/"
+    },
+    {
+      "id": 93,
+      "slug": "amazon-s-melania-documentary-stumbles-in-second-weekend",
+      "title": "Amazon\u2019s \u2018Melania\u2019 documentary stumbles in second weekend",
+      "description": "Imported from RSS feed: Amazon\u2019s \u2018Melania\u2019 documentary stumbles in second weekend",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "Amazon\u2019s \u2018Melania\u2019 documentary stumbles in second weekend",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-09",
+      "lastModified": "2026-02-09",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "Amazon\u2019s \u2018Melania\u2019 documentary stumbles in second weekend",
+        "metaDescription": "Amazon\u2019s \u2018Melania\u2019 documentary stumbles in second weekend",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/08/amazons-melania-documentary-stumbles-in-second-weekend/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/08/amazons-melania-documentary-stumbles-in-second-weekend/"
+    },
+    {
+      "id": 92,
+      "slug": "benchmark-raises-225m-in-special-funds-to-double-down-on-cerebras",
+      "title": "Benchmark raises $225M in special funds to double down on Cerebras",
+      "description": "Imported from RSS feed: Benchmark raises $225M in special funds to double down on Cerebras",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "Benchmark raises $225M in special funds to double down on Cerebras",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-08",
+      "lastModified": "2026-02-08",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "Benchmark raises $225M in special funds to double down on Cerebras",
+        "metaDescription": "Benchmark raises $225M in special funds to double down on Cerebras",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/06/benchmark-raises-225m-in-special-funds-to-double-down-on-cerebras/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/06/benchmark-raises-225m-in-special-funds-to-double-down-on-cerebras/"
+    },
+    {
+      "id": 91,
+      "slug": "new-york-lawmakers-propose-a-three-year-pause-on-new-data-centers",
+      "title": "New York lawmakers propose a three-year pause on new data centers",
+      "description": "Imported from RSS feed: New York lawmakers propose a three-year pause on new data centers",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "New York lawmakers propose a three-year pause on new data centers",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-08",
+      "lastModified": "2026-02-08",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "New York lawmakers propose a three-year pause on new data centers",
+        "metaDescription": "New York lawmakers propose a three-year pause on new data centers",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/07/new-york-lawmakers-propose-a-three-year-pause-on-new-data-centers/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/07/new-york-lawmakers-propose-a-three-year-pause-on-new-data-centers/"
+    },
+    {
+      "id": 90,
+      "slug": "nba-star-giannis-antetokounmpo-joins-kalshi-as-an-investor",
+      "title": "NBA star Giannis Antetokounmpo joins Kalshi as an investor",
+      "description": "Imported from RSS feed: NBA star Giannis Antetokounmpo joins Kalshi as an investor",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "NBA star Giannis Antetokounmpo joins Kalshi as an investor",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-08",
+      "lastModified": "2026-02-08",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "NBA star Giannis Antetokounmpo joins Kalshi as an investor",
+        "metaDescription": "NBA star Giannis Antetokounmpo joins Kalshi as an investor",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/07/nba-star-giannis-antetokounmpo-joins-kalshi-as-an-investor/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/07/nba-star-giannis-antetokounmpo-joins-kalshi-as-an-investor/"
+    },
+    {
+      "id": 89,
+      "slug": "the-kids-picked-last-in-gym-class-gear-up-for-super-bowl",
+      "title": "The kids \u2018picked last in gym class\u2019 gear up for Super Bowl",
+      "description": "Imported from RSS feed: The kids \u2018picked last in gym class\u2019 gear up for Super Bowl",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "The kids \u2018picked last in gym class\u2019 gear up for Super Bowl",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-08",
+      "lastModified": "2026-02-08",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "The kids \u2018picked last in gym class\u2019 gear up for Super Bowl",
+        "metaDescription": "The kids \u2018picked last in gym class\u2019 gear up for Super Bowl",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/07/the-kids-picked-last-in-gym-class-gear-up-for-super-bowl/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/07/the-kids-picked-last-in-gym-class-gear-up-for-super-bowl/"
+    },
+    {
+      "id": 88,
+      "slug": "reddit-says-it-s-looking-for-more-acquisitions-in-adtech-and-elsewhere",
+      "title": "Reddit says it\u2019s looking for more acquisitions in adtech and elsewhere",
+      "description": "Imported from RSS feed: Reddit says it\u2019s looking for more acquisitions in adtech and elsewhere",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "Reddit says it\u2019s looking for more acquisitions in adtech and elsewhere",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-07",
+      "lastModified": "2026-02-07",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "Reddit says it\u2019s looking for more acquisitions in adtech and elsewhere",
+        "metaDescription": "Reddit says it\u2019s looking for more acquisitions in adtech and elsewhere",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/06/reddit-says-its-looking-for-more-acquisitions-in-adtech-and-elsewhere/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/06/reddit-says-its-looking-for-more-acquisitions-in-adtech-and-elsewhere/"
+    },
+    {
+      "id": 87,
+      "slug": "how-elon-musk-is-rewriting-the-rules-on-founder-power",
+      "title": "How Elon Musk is rewriting the rules on founder power",
+      "description": "Imported from RSS feed: How Elon Musk is rewriting the rules on founder power",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "How Elon Musk is rewriting the rules on founder power",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-07",
+      "lastModified": "2026-02-07",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "How Elon Musk is rewriting the rules on founder power",
+        "metaDescription": "How Elon Musk is rewriting the rules on founder power",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/video/how-elon-musk-is-rewriting-the-rules-on-founder-power/"
+      },
+      "externalUrl": "https://techcrunch.com/video/how-elon-musk-is-rewriting-the-rules-on-founder-power/"
+    },
+    {
+      "id": 86,
+      "slug": "maybe-ai-agents-can-be-lawyers-after-all",
+      "title": "Maybe AI agents can be lawyers after all",
+      "description": "Imported from RSS feed: Maybe AI agents can be lawyers after all",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "Maybe AI agents can be lawyers after all",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-07",
+      "lastModified": "2026-02-07",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "Maybe AI agents can be lawyers after all",
+        "metaDescription": "Maybe AI agents can be lawyers after all",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/06/maybe-ai-agents-can-be-lawyers-after-all/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/06/maybe-ai-agents-can-be-lawyers-after-all/"
+    },
+    {
+      "id": 85,
+      "slug": "google-and-microsoft-backed-terradot-acquires-carbon-removal-competitor",
+      "title": "Google- and Microsoft-backed Terradot acquires carbon-removal competitor",
+      "description": "Imported from RSS feed: Google- and Microsoft-backed Terradot acquires carbon-removal competitor",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "Google- and Microsoft-backed Terradot acquires carbon-removal competitor",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-07",
+      "lastModified": "2026-02-07",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "Google- and Microsoft-backed Terradot acquires carbon-removal competitor",
+        "metaDescription": "Google- and Microsoft-backed Terradot acquires carbon-removal competitor",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/06/google-and-microsoft-backed-terradot-acquires-carbon-removal-competitor/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/06/google-and-microsoft-backed-terradot-acquires-carbon-removal-competitor/"
+    },
+    {
+      "id": 84,
+      "slug": "prince-andrew-advisor-pitched-jeffrey-epstein-on-investing-in-ev-startups-like-lucid-motors",
+      "title": "Prince Andrew advisor pitched Jeffrey Epstein on investing in EV startups like Lucid Motors",
+      "description": "Imported from RSS feed: Prince Andrew advisor pitched Jeffrey Epstein on investing in EV startups like Lucid Motors",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "Prince Andrew advisor pitched Jeffrey Epstein on investing in EV startups like Lucid Motors",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-07",
+      "lastModified": "2026-02-07",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "Prince Andrew advisor pitched Jeffrey Epstein on investing in EV startups like Lucid Motors",
+        "metaDescription": "Prince Andrew advisor pitched Jeffrey Epstein on investing in EV startups like Lucid Motors",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/06/prince-andrew-advisor-pitched-jeffrey-epstein-on-investing-in-ev-startups-like-lucid-motors/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/06/prince-andrew-advisor-pitched-jeffrey-epstein-on-investing-in-ev-startups-like-lucid-motors/"
+    },
+    {
+      "id": 83,
+      "slug": "it-just-got-easier-for-claude-to-check-in-on-your-wordpress-site",
+      "title": "It just got easier for Claude to check in on your WordPress site",
+      "description": "Imported from RSS feed: It just got easier for Claude to check in on your WordPress site",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "It just got easier for Claude to check in on your WordPress site",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-07",
+      "lastModified": "2026-02-07",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "It just got easier for Claude to check in on your WordPress site",
+        "metaDescription": "It just got easier for Claude to check in on your WordPress site",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/06/it-just-got-easier-for-claude-to-check-in-on-your-wordpress-site/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/06/it-just-got-easier-for-claude-to-check-in-on-your-wordpress-site/"
+    },
+    {
+      "id": 82,
+      "slug": "from-svedka-to-anthropic-brands-make-bold-plays-with-ai-in-super-bowl-ads",
+      "title": "From Svedka to Anthropic, brands make bold plays with AI in Super Bowl ads",
+      "description": "Imported from RSS feed: From Svedka to Anthropic, brands make bold plays with AI in Super Bowl ads",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "From Svedka to Anthropic, brands make bold plays with AI in Super Bowl ads",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-07",
+      "lastModified": "2026-02-07",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "From Svedka to Anthropic, brands make bold plays with AI in Super Bowl ads",
+        "metaDescription": "From Svedka to Anthropic, brands make bold plays with AI in Super Bowl ads",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/06/super-bowl-60-ai-ads-svedka-anthropic-brands-commercials/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/06/super-bowl-60-ai-ads-svedka-anthropic-brands-commercials/"
+    },
+    {
+      "id": 81,
+      "slug": "apple-is-working-to-make-carplay-compatible-with-ai-chatbots-like-chatgpt",
+      "title": "Apple is working to make CarPlay compatible with AI chatbots like ChatGPT",
+      "description": "Imported from RSS feed: Apple is working to make CarPlay compatible with AI chatbots like ChatGPT",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "Apple is working to make CarPlay compatible with AI chatbots like ChatGPT",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-07",
+      "lastModified": "2026-02-07",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "Apple is working to make CarPlay compatible with AI chatbots like ChatGPT",
+        "metaDescription": "Apple is working to make CarPlay compatible with AI chatbots like ChatGPT",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/06/apple-is-working-to-make-carplay-compatible-with-ai-chatbots-like-chatgpt/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/06/apple-is-working-to-make-carplay-compatible-with-ai-chatbots-like-chatgpt/"
+    },
+    {
+      "id": 80,
+      "slug": "industry-season-4-captures-tech-fraud-better-than-any-show-on-tv-right-now",
+      "title": "\u2018Industry\u2019 season 4 captures tech fraud better than any show on TV right now",
+      "description": "Imported from RSS feed: \u2018Industry\u2019 season 4 captures tech fraud better than any show on TV right now",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "\u2018Industry\u2019 season 4 captures tech fraud better than any show on TV right now",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-07",
+      "lastModified": "2026-02-07",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "\u2018Industry\u2019 season 4 captures tech fraud better than any show on TV right now",
+        "metaDescription": "\u2018Industry\u2019 season 4 captures tech fraud better than any show on TV right now",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/06/industry-season-4-captures-tech-fraud-better-than-any-show-on-tv-right-now/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/06/industry-season-4-captures-tech-fraud-better-than-any-show-on-tv-right-now/"
+    },
+    {
+      "id": 79,
+      "slug": "an-ai-startup-founder-says-he-s-planning-a-march-for-billionaires-in-protest-of-california-s-wealth-tax",
+      "title": "An AI startup founder says he\u2019s planning a \u2018March for Billionaires\u2019 in protest of California\u2019s wealth tax",
+      "description": "Imported from RSS feed: An AI startup founder says he\u2019s planning a \u2018March for Billionaires\u2019 in protest of California\u2019s wealth tax",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "An AI startup founder says he\u2019s planning a \u2018March for Billionaires\u2019 in protest of California\u2019s wealth tax",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-07",
+      "lastModified": "2026-02-07",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "An AI startup founder says he\u2019s planning a \u2018March for Billionaires\u2019 in protest of California\u2019s wealth tax",
+        "metaDescription": "An AI startup founder says he\u2019s planning a \u2018March for Billionaires\u2019 in protest of California\u2019s wealth tax",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/06/an-ai-startup-founder-says-hes-planning-a-march-for-billionaires-in-protest-of-californias-wealth-tax/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/06/an-ai-startup-founder-says-hes-planning-a-march-for-billionaires-in-protest-of-californias-wealth-tax/"
+    },
+    {
+      "id": 78,
+      "slug": "nasa-astronauts-can-now-bring-their-phones-with-them-on-their-mission-to-the-moon",
+      "title": "NASA astronauts can now bring their phones with them on their mission to the moon",
+      "description": "Imported from RSS feed: NASA astronauts can now bring their phones with them on their mission to the moon",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "NASA astronauts can now bring their phones with them on their mission to the moon",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-06",
+      "lastModified": "2026-02-06",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "NASA astronauts can now bring their phones with them on their mission to the moon",
+        "metaDescription": "NASA astronauts can now bring their phones with them on their mission to the moon",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/05/nasa-astronauts-can-now-bring-their-phones-with-them-on-their-mission-to-the-moon/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/05/nasa-astronauts-can-now-bring-their-phones-with-them-on-their-mission-to-the-moon/"
+    },
+    {
+      "id": 77,
+      "slug": "elon-musk-is-getting-serious-about-orbital-data-centers",
+      "title": "Elon Musk is getting serious about orbital data centers",
+      "description": "Imported from RSS feed: Elon Musk is getting serious about orbital data centers",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "Elon Musk is getting serious about orbital data centers",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-06",
+      "lastModified": "2026-02-06",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "Elon Musk is getting serious about orbital data centers",
+        "metaDescription": "Elon Musk is getting serious about orbital data centers",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/05/elon-musk-is-getting-serious-about-orbital-data-centers/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/05/elon-musk-is-getting-serious-about-orbital-data-centers/"
+    },
+    {
+      "id": 76,
+      "slug": "one-of-europe-s-largest-universities-knocked-offline-for-days-after-cyberattack",
+      "title": "One of Europe\u2019s largest universities knocked offline for days after cyberattack",
+      "description": "Imported from RSS feed: One of Europe\u2019s largest universities knocked offline for days after cyberattack",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "One of Europe\u2019s largest universities knocked offline for days after cyberattack",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-06",
+      "lastModified": "2026-02-06",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "One of Europe\u2019s largest universities knocked offline for days after cyberattack",
+        "metaDescription": "One of Europe\u2019s largest universities knocked offline for days after cyberattack",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/05/one-of-europes-largest-universities-knocked-offline-for-days-after-cyberattack/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/05/one-of-europes-largest-universities-knocked-offline-for-days-after-cyberattack/"
+    },
+    {
+      "id": 75,
+      "slug": "openai-launches-new-agentic-coding-model-only-minutes-after-anthropic-drops-its-own",
+      "title": "OpenAI launches new agentic coding model only minutes after Anthropic drops its own",
+      "description": "Imported from RSS feed: OpenAI launches new agentic coding model only minutes after Anthropic drops its own",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "OpenAI launches new agentic coding model only minutes after Anthropic drops its own",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-06",
+      "lastModified": "2026-02-06",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "OpenAI launches new agentic coding model only minutes after Anthropic drops its own",
+        "metaDescription": "OpenAI launches new agentic coding model only minutes after Anthropic drops its own",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/05/openai-launches-new-agentic-coding-model-only-minutes-after-anthropic-drops-its-own/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/05/openai-launches-new-agentic-coding-model-only-minutes-after-anthropic-drops-its-own/"
+    },
+    {
+      "id": 74,
+      "slug": "a16z-vc-wants-founders-to-stop-stressing-over-insane-arr-numbers",
+      "title": "a16z VC\u00a0wants founders to stop stressing over insane ARR numbers",
+      "description": "Imported from RSS feed: a16z VC\u00a0wants founders to stop stressing over insane ARR numbers",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "a16z VC\u00a0wants founders to stop stressing over insane ARR numbers",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-06",
+      "lastModified": "2026-02-06",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "a16z VC\u00a0wants founders to stop stressing over insane ARR numbers",
+        "metaDescription": "a16z VC\u00a0wants founders to stop stressing over insane ARR numbers",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/05/a16z-vc-wants-founders-to-stop-stressing-over-insane-arr-numbers/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/05/a16z-vc-wants-founders-to-stop-stressing-over-insane-arr-numbers/"
+    },
+    {
+      "id": 73,
+      "slug": "the-washington-post-is-retreating-from-silicon-valley-when-it-matters-most",
+      "title": "The Washington Post is retreating from Silicon Valley when it matters most",
+      "description": "Imported from RSS feed: The Washington Post is retreating from Silicon Valley when it matters most",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "The Washington Post is retreating from Silicon Valley when it matters most",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-06",
+      "lastModified": "2026-02-06",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "The Washington Post is retreating from Silicon Valley when it matters most",
+        "metaDescription": "The Washington Post is retreating from Silicon Valley when it matters most",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/05/the-washington-post-is-retreating-from-silicon-valley-when-it-matters-most/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/05/the-washington-post-is-retreating-from-silicon-valley-when-it-matters-most/"
+    },
+    {
+      "id": 72,
+      "slug": "amazon-and-google-are-winning-the-ai-capex-race-but-what-s-the-prize",
+      "title": "Amazon and Google are winning the AI capex race \u2014 but what\u2019s the prize?",
+      "description": "Imported from RSS feed: Amazon and Google are winning the AI capex race \u2014 but what\u2019s the prize?",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "Amazon and Google are winning the AI capex race \u2014 but what\u2019s the prize?",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-06",
+      "lastModified": "2026-02-06",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "Amazon and Google are winning the AI capex race \u2014 but what\u2019s the prize?",
+        "metaDescription": "Amazon and Google are winning the AI capex race \u2014 but what\u2019s the prize?",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/05/amazon-and-google-are-winning-the-ai-capex-race-but-whats-the-prize/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/05/amazon-and-google-are-winning-the-ai-capex-race-but-whats-the-prize/"
+    },
+    {
+      "id": 71,
+      "slug": "aws-revenue-continues-to-soar-as-cloud-demand-remains-high",
+      "title": "AWS revenue continues to soar as cloud demand remains high",
+      "description": "Imported from RSS feed: AWS revenue continues to soar as cloud demand remains high",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "AWS revenue continues to soar as cloud demand remains high",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-06",
+      "lastModified": "2026-02-06",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "AWS revenue continues to soar as cloud demand remains high",
+        "metaDescription": "AWS revenue continues to soar as cloud demand remains high",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/05/aws-revenue-continues-to-soar-as-cloud-demand-remains-high/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/05/aws-revenue-continues-to-soar-as-cloud-demand-remains-high/"
+    },
+    {
+      "id": 70,
+      "slug": "reddit-looks-to-ai-search-as-its-next-big-opportunity",
+      "title": "Reddit looks to AI search as its next big opportunity",
+      "description": "Imported from RSS feed: Reddit looks to AI search as its next big opportunity",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "Reddit looks to AI search as its next big opportunity",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-06",
+      "lastModified": "2026-02-06",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "Reddit looks to AI search as its next big opportunity",
+        "metaDescription": "Reddit looks to AI search as its next big opportunity",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/05/reddit-looks-to-ai-search-as-its-next-big-opportunity/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/05/reddit-looks-to-ai-search-as-its-next-big-opportunity/"
+    },
+    {
+      "id": 69,
+      "slug": "sapiom-raises-15m-to-help-ai-agents-buy-their-own-tech-tools",
+      "title": "Sapiom raises $15M to help AI agents buy their own tech tools",
+      "description": "Imported from RSS feed: Sapiom raises $15M to help AI agents buy their own tech tools",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "Sapiom raises $15M to help AI agents buy their own tech tools",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-06",
+      "lastModified": "2026-02-06",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "Sapiom raises $15M to help AI agents buy their own tech tools",
+        "metaDescription": "Sapiom raises $15M to help AI agents buy their own tech tools",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/05/sapiom-raises-15m-to-help-ai-agents-buy-their-own-tech-tools/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/05/sapiom-raises-15m-to-help-ai-agents-buy-their-own-tech-tools/"
+    },
+    {
+      "id": 68,
+      "slug": "ai-sre-resolve-ai-confirms-125m-raise-unicorn-valuation",
+      "title": "AI SRE Resolve AI confirms $125M raise, unicorn valuation",
+      "description": "Imported from RSS feed: AI SRE Resolve AI confirms $125M raise, unicorn valuation",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "AI SRE Resolve AI confirms $125M raise, unicorn valuation",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-05",
+      "lastModified": "2026-02-05",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "AI SRE Resolve AI confirms $125M raise, unicorn valuation",
+        "metaDescription": "AI SRE Resolve AI confirms $125M raise, unicorn valuation",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/04/ai-sre-resolve-ai-confirms-125m-raise-unicorn-valuation/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/04/ai-sre-resolve-ai-confirms-125m-raise-unicorn-valuation/"
+    },
+    {
+      "id": 67,
+      "slug": "meet-gizmo-a-tiktok-for-interactive-vibe-coded-mini-apps",
+      "title": "Meet Gizmo: A TikTok for interactive, vibe-coded mini apps",
+      "description": "Imported from RSS feed: Meet Gizmo: A TikTok for interactive, vibe-coded mini apps",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "Meet Gizmo: A TikTok for interactive, vibe-coded mini apps",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-05",
+      "lastModified": "2026-02-05",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "Meet Gizmo: A TikTok for interactive, vibe-coded mini apps",
+        "metaDescription": "Meet Gizmo: A TikTok for interactive, vibe-coded mini apps",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/04/meet-gizmo-a-tiktok-for-interactive-vibe-coded-mini-apps/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/04/meet-gizmo-a-tiktok-for-interactive-vibe-coded-mini-apps/"
+    },
+    {
+      "id": 66,
+      "slug": "elon-musk-s-spacex-company-town-is-getting-a-police-department",
+      "title": "Elon Musk\u2019s SpaceX company town is getting a police department",
+      "description": "Imported from RSS feed: Elon Musk\u2019s SpaceX company town is getting a police department",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "Elon Musk\u2019s SpaceX company town is getting a police department",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-05",
+      "lastModified": "2026-02-05",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "Elon Musk\u2019s SpaceX company town is getting a police department",
+        "metaDescription": "Elon Musk\u2019s SpaceX company town is getting a police department",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/04/elon-musks-spacex-company-town-is-getting-a-police-department/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/04/elon-musks-spacex-company-town-is-getting-a-police-department/"
+    },
+    {
+      "id": 65,
+      "slug": "the-wayback-machine-debuts-a-new-plug-in-designed-to-fix-the-internet-s-broken-links-problem",
+      "title": "The Wayback Machine debuts a new plug-in designed to fix the internet\u2019s broken links problem",
+      "description": "Imported from RSS feed: The Wayback Machine debuts a new plug-in designed to fix the internet\u2019s broken links problem",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "The Wayback Machine debuts a new plug-in designed to fix the internet\u2019s broken links problem",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-05",
+      "lastModified": "2026-02-05",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "The Wayback Machine debuts a new plug-in designed to fix the internet\u2019s broken links problem",
+        "metaDescription": "The Wayback Machine debuts a new plug-in designed to fix the internet\u2019s broken links problem",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/04/the-wayback-machine-debuts-a-new-plugin-designed-to-fix-the-internets-broken-links-problem/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/04/the-wayback-machine-debuts-a-new-plugin-designed-to-fix-the-internets-broken-links-problem/"
+    },
+    {
+      "id": 64,
+      "slug": "google-s-gemini-app-has-surpassed-750m-monthly-active-users",
+      "title": "Google\u2019s Gemini app has surpassed 750M monthly active users",
+      "description": "Imported from RSS feed: Google\u2019s Gemini app has surpassed 750M monthly active users",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "Google\u2019s Gemini app has surpassed 750M monthly active users",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-05",
+      "lastModified": "2026-02-05",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "Google\u2019s Gemini app has surpassed 750M monthly active users",
+        "metaDescription": "Google\u2019s Gemini app has surpassed 750M monthly active users",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/04/googles-gemini-app-has-surpassed-750m-monthly-active-users/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/04/googles-gemini-app-has-surpassed-750m-monthly-active-users/"
+    },
+    {
+      "id": 63,
+      "slug": "alphabet-won-t-talk-about-the-google-apple-ai-deal-even-to-investors",
+      "title": "Alphabet won\u2019t talk about the Google-Apple AI deal, even to investors",
+      "description": "Imported from RSS feed: Alphabet won\u2019t talk about the Google-Apple AI deal, even to investors",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "Alphabet won\u2019t talk about the Google-Apple AI deal, even to investors",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-05",
+      "lastModified": "2026-02-05",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "Alphabet won\u2019t talk about the Google-Apple AI deal, even to investors",
+        "metaDescription": "Alphabet won\u2019t talk about the Google-Apple AI deal, even to investors",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/04/alphabet-wont-talk-about-the-google-apple-ai-deal-even-to-investors/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/04/alphabet-wont-talk-about-the-google-apple-ai-deal-even-to-investors/"
+    },
+    {
+      "id": 62,
+      "slug": "stripe-alumni-raise-30m-series-a-for-duna-backed-by-stripe-and-adyen-execs",
+      "title": "Stripe alumni raise \u20ac30M Series A for Duna, backed by Stripe and Adyen execs",
+      "description": "Imported from RSS feed: Stripe alumni raise \u20ac30M Series A for Duna, backed by Stripe and Adyen execs",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "Stripe alumni raise \u20ac30M Series A for Duna, backed by Stripe and Adyen execs",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-05",
+      "lastModified": "2026-02-05",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "Stripe alumni raise \u20ac30M Series A for Duna, backed by Stripe and Adyen execs",
+        "metaDescription": "Stripe alumni raise \u20ac30M Series A for Duna, backed by Stripe and Adyen execs",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/04/stripe-alumni-raise-e30m-series-a-for-duna-backed-by-stripe-and-adyen-execs/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/04/stripe-alumni-raise-e30m-series-a-for-duna-backed-by-stripe-and-adyen-execs/"
+    },
+    {
+      "id": 61,
+      "slug": "mundi-ventures-closes-on-750m-for-kembara-its-largest-deep-tech-and-climate-fund",
+      "title": "Mundi Ventures closes on \u20ac750M for Kembara, its largest deep tech and climate fund",
+      "description": "Imported from RSS feed: Mundi Ventures closes on \u20ac750M for Kembara, its largest deep tech and climate fund",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "Mundi Ventures closes on \u20ac750M for Kembara, its largest deep tech and climate fund",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-05",
+      "lastModified": "2026-02-05",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "Mundi Ventures closes on \u20ac750M for Kembara, its largest deep tech and climate fund",
+        "metaDescription": "Mundi Ventures closes on \u20ac750M for Kembara, its largest deep tech and climate fund",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/04/mundi-ventures-closes-on-e750m-for-kembara-its-largest-deep-tech-and-climate-fund/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/04/mundi-ventures-closes-on-e750m-for-kembara-its-largest-deep-tech-and-climate-fund/"
+    },
+    {
+      "id": 60,
+      "slug": "as-it-preps-specs-for-the-masses-snap-s-q4-shows-revenue-growth-but-fewer-daily-users",
+      "title": "As it preps Specs for the masses, Snap\u2019s Q4 shows revenue growth but fewer daily users",
+      "description": "Imported from RSS feed: As it preps Specs for the masses, Snap\u2019s Q4 shows revenue growth but fewer daily users",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "As it preps Specs for the masses, Snap\u2019s Q4 shows revenue growth but fewer daily users",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-05",
+      "lastModified": "2026-02-05",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "As it preps Specs for the masses, Snap\u2019s Q4 shows revenue growth but fewer daily users",
+        "metaDescription": "As it preps Specs for the masses, Snap\u2019s Q4 shows revenue growth but fewer daily users",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/04/as-it-preps-specs-for-the-masses-snaps-q4-shows-revenue-growth-but-fewer-daily-users/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/04/as-it-preps-specs-for-the-masses-snaps-q4-shows-revenue-growth-but-fewer-daily-users/"
+    },
+    {
+      "id": 59,
+      "slug": "sam-altman-got-exceptionally-testy-over-claude-super-bowl-ads",
+      "title": "Sam Altman got exceptionally testy over Claude Super Bowl ads",
+      "description": "Imported from RSS feed: Sam Altman got exceptionally testy over Claude Super Bowl ads",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "Sam Altman got exceptionally testy over Claude Super Bowl ads",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-05",
+      "lastModified": "2026-02-05",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "Sam Altman got exceptionally testy over Claude Super Bowl ads",
+        "metaDescription": "Sam Altman got exceptionally testy over Claude Super Bowl ads",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/04/sam-altman-got-exceptionally-testy-over-claude-super-bowl-ads/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/04/sam-altman-got-exceptionally-testy-over-claude-super-bowl-ads/"
+    },
+    {
+      "id": 58,
+      "slug": "gradient-s-heat-pumps-get-new-smarts-to-enable-old-building-retrofits",
+      "title": "Gradient\u2019s heat pumps get new smarts to enable old-building retrofits",
+      "description": "Imported from RSS feed: Gradient\u2019s heat pumps get new smarts to enable old-building retrofits",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "Gradient\u2019s heat pumps get new smarts to enable old-building retrofits",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-04",
+      "lastModified": "2026-02-04",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "Gradient\u2019s heat pumps get new smarts to enable old-building retrofits",
+        "metaDescription": "Gradient\u2019s heat pumps get new smarts to enable old-building retrofits",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/03/gradients-heat-pumps-get-new-smarts-to-enable-old-building-retrofits/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/03/gradients-heat-pumps-get-new-smarts-to-enable-old-building-retrofits/"
+    },
+    {
+      "id": 57,
+      "slug": "xcode-moves-into-agentic-coding-with-deeper-openai-and-anthropic-integrations",
+      "title": "Xcode moves into agentic coding with deeper OpenAI and Anthropic integrations",
+      "description": "Imported from RSS feed: Xcode moves into agentic coding with deeper OpenAI and Anthropic integrations",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "Xcode moves into agentic coding with deeper OpenAI and Anthropic integrations",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-04",
+      "lastModified": "2026-02-04",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "Xcode moves into agentic coding with deeper OpenAI and Anthropic integrations",
+        "metaDescription": "Xcode moves into agentic coding with deeper OpenAI and Anthropic integrations",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/03/xcode-moves-into-agentic-coding-with-deeper-openai-and-anthropic-integrations/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/03/xcode-moves-into-agentic-coding-with-deeper-openai-and-anthropic-integrations/"
+    },
+    {
+      "id": 56,
+      "slug": "skyryse-lands-another-300m-to-make-flying-even-helicopters-simple-and-safe",
+      "title": "Skyryse lands another $300M to make flying, even helicopters, simple and safe",
+      "description": "Imported from RSS feed: Skyryse lands another $300M to make flying, even helicopters, simple and safe",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "Skyryse lands another $300M to make flying, even helicopters, simple and safe",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-04",
+      "lastModified": "2026-02-04",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "Skyryse lands another $300M to make flying, even helicopters, simple and safe",
+        "metaDescription": "Skyryse lands another $300M to make flying, even helicopters, simple and safe",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/03/skyryse-lands-another-300m-to-make-flying-even-helicopters-simple-and-safe/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/03/skyryse-lands-another-300m-to-make-flying-even-helicopters-simple-and-safe/"
+    },
+    {
+      "id": 55,
+      "slug": "homeland-security-is-trying-to-force-tech-companies-to-hand-over-data-about-trump-critics",
+      "title": "Homeland Security is trying to force tech companies to hand over data about Trump critics",
+      "description": "Imported from RSS feed: Homeland Security is trying to force tech companies to hand over data about Trump critics",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "Homeland Security is trying to force tech companies to hand over data about Trump critics",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-04",
+      "lastModified": "2026-02-04",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "Homeland Security is trying to force tech companies to hand over data about Trump critics",
+        "metaDescription": "Homeland Security is trying to force tech companies to hand over data about Trump critics",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/03/homeland-security-is-trying-to-force-tech-companies-to-hand-over-data-about-trump-critics/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/03/homeland-security-is-trying-to-force-tech-companies-to-hand-over-data-about-trump-critics/"
+    },
+    {
+      "id": 54,
+      "slug": "2026-plans-what-s-next-for-startup-battlefield-200",
+      "title": "2026 plans: What\u2019s next for Startup Battlefield 200",
+      "description": "Imported from RSS feed: 2026 plans: What\u2019s next for Startup Battlefield 200",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "2026 plans: What\u2019s next for Startup Battlefield 200",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-04",
+      "lastModified": "2026-02-04",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "2026 plans: What\u2019s next for Startup Battlefield 200",
+        "metaDescription": "2026 plans: What\u2019s next for Startup Battlefield 200",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/03/looking-ahead-to-2026-whats-next-for-startup-battlefield-200/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/03/looking-ahead-to-2026-whats-next-for-startup-battlefield-200/"
+    },
+    {
+      "id": 53,
+      "slug": "yc-startups-can-now-receive-investment-in-stablecoin",
+      "title": "YC startups can now receive investment in stablecoin",
+      "description": "Imported from RSS feed: YC startups can now receive investment in stablecoin",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "YC startups can now receive investment in stablecoin",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-04",
+      "lastModified": "2026-02-04",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "YC startups can now receive investment in stablecoin",
+        "metaDescription": "YC startups can now receive investment in stablecoin",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/03/yc-startups-can-now-recieve-investment-in-stablecoin/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/03/yc-startups-can-now-recieve-investment-in-stablecoin/"
+    },
+    {
+      "id": 52,
+      "slug": "intel-will-start-making-gpus-a-market-dominated-by-nvidia",
+      "title": "Intel will start making GPUs, a market dominated by Nvidia",
+      "description": "Imported from RSS feed: Intel will start making GPUs, a market dominated by Nvidia",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "Intel will start making GPUs, a market dominated by Nvidia",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-04",
+      "lastModified": "2026-02-04",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "Intel will start making GPUs, a market dominated by Nvidia",
+        "metaDescription": "Intel will start making GPUs, a market dominated by Nvidia",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/03/intel-will-start-making-gpus-a-market-dominated-by-nvidia/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/03/intel-will-start-making-gpus-a-market-dominated-by-nvidia/"
+    },
+    {
+      "id": 51,
+      "slug": "the-minneapolis-tech-community-holds-strong-during-tense-and-difficult-time",
+      "title": "The Minneapolis tech community holds strong during \u2018tense and difficult time\u2019",
+      "description": "Imported from RSS feed: The Minneapolis tech community holds strong during \u2018tense and difficult time\u2019",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "The Minneapolis tech community holds strong during \u2018tense and difficult time\u2019",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-04",
+      "lastModified": "2026-02-04",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "The Minneapolis tech community holds strong during \u2018tense and difficult time\u2019",
+        "metaDescription": "The Minneapolis tech community holds strong during \u2018tense and difficult time\u2019",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/03/minnesota-tech-community-founders-investors-ice-response/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/03/minnesota-tech-community-founders-investors-ice-response/"
+    },
+    {
+      "id": 50,
+      "slug": "india-s-varaha-bags-20m-to-scale-carbon-removal-from-the-global-south",
+      "title": "India\u2019s Varaha bags $20M to scale carbon removal from the Global South",
+      "description": "Imported from RSS feed: India\u2019s Varaha bags $20M to scale carbon removal from the Global South",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "India\u2019s Varaha bags $20M to scale carbon removal from the Global South",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-04",
+      "lastModified": "2026-02-04",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "India\u2019s Varaha bags $20M to scale carbon removal from the Global South",
+        "metaDescription": "India\u2019s Varaha bags $20M to scale carbon removal from the Global South",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/03/indias-varaha-bags-20m-to-scale-carbon-removal-from-the-global-south/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/03/indias-varaha-bags-20m-to-scale-carbon-removal-from-the-global-south/"
+    },
+    {
+      "id": 49,
+      "slug": "epstein-linked-longevity-guru-peter-attia-leaves-david-protein-and-his-own-startup-won-t-comment",
+      "title": "Epstein-linked longevity guru Peter Attia leaves David Protein, and his own startup \u2018won\u2019t comment\u2019",
+      "description": "Imported from RSS feed: Epstein-linked longevity guru Peter Attia leaves David Protein, and his own startup \u2018won\u2019t comment\u2019",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "Epstein-linked longevity guru Peter Attia leaves David Protein, and his own startup \u2018won\u2019t comment\u2019",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-04",
+      "lastModified": "2026-02-04",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "Epstein-linked longevity guru Peter Attia leaves David Protein, and his own startup \u2018won\u2019t comment\u2019",
+        "metaDescription": "Epstein-linked longevity guru Peter Attia leaves David Protein, and his own startup \u2018won\u2019t comment\u2019",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/03/epstein-linked-longevity-guru-peter-attia-leaves-david-protein-and-his-own-startup-wont-comment/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/03/epstein-linked-longevity-guru-peter-attia-leaves-david-protein-and-his-own-startup-wont-comment/"
+    },
+    {
+      "id": 48,
+      "slug": "openai-launches-new-macos-app-for-agentic-coding",
+      "title": "OpenAI launches new macOS app for agentic coding",
+      "description": "Imported from RSS feed: OpenAI launches new macOS app for agentic coding",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "OpenAI launches new macOS app for agentic coding",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-03",
+      "lastModified": "2026-02-03",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "OpenAI launches new macOS app for agentic coding",
+        "metaDescription": "OpenAI launches new macOS app for agentic coding",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/02/openai-launches-new-macos-app-for-agentic-coding/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/02/openai-launches-new-macos-app-for-agentic-coding/"
+    },
+    {
+      "id": 47,
+      "slug": "grubhub-waives-delivery-and-service-fees-on-restaurant-orders-over-50",
+      "title": "Grubhub waives delivery and service fees on restaurant orders over $50",
+      "description": "Imported from RSS feed: Grubhub waives delivery and service fees on restaurant orders over $50",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "Grubhub waives delivery and service fees on restaurant orders over $50",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-03",
+      "lastModified": "2026-02-03",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "Grubhub waives delivery and service fees on restaurant orders over $50",
+        "metaDescription": "Grubhub waives delivery and service fees on restaurant orders over $50",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/02/grubhub-waives-delivery-service-fees-orders-over-50/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/02/grubhub-waives-delivery-service-fees-orders-over-50/"
+    },
+    {
+      "id": 46,
+      "slug": "firefox-will-soon-let-you-block-all-of-its-generative-ai-features",
+      "title": "Firefox will soon let you block all of its generative AI features",
+      "description": "Imported from RSS feed: Firefox will soon let you block all of its generative AI features",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "Firefox will soon let you block all of its generative AI features",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-03",
+      "lastModified": "2026-02-03",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "Firefox will soon let you block all of its generative AI features",
+        "metaDescription": "Firefox will soon let you block all of its generative AI features",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/02/firefox-will-soon-let-you-block-all-of-its-generative-ai-features/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/02/firefox-will-soon-let-you-block-all-of-its-generative-ai-features/"
+    },
+    {
+      "id": 45,
+      "slug": "what-snowflake-s-deal-with-openai-tells-us-about-the-enterprise-ai-race",
+      "title": "What Snowflake\u2019s deal with OpenAI tells us about\u00a0the enterprise AI race",
+      "description": "Imported from RSS feed: What Snowflake\u2019s deal with OpenAI tells us about\u00a0the enterprise AI race",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "What Snowflake\u2019s deal with OpenAI tells us about\u00a0the enterprise AI race",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-03",
+      "lastModified": "2026-02-03",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "What Snowflake\u2019s deal with OpenAI tells us about\u00a0the enterprise AI race",
+        "metaDescription": "What Snowflake\u2019s deal with OpenAI tells us about\u00a0the enterprise AI race",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/02/what-snowflakes-deal-with-openai-tells-us-about-the-enterprise-ai-race/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/02/what-snowflakes-deal-with-openai-tells-us-about-the-enterprise-ai-race/"
+    },
+    {
+      "id": 44,
+      "slug": "two-stanford-students-launch-2m-startup-accelerator-for-students-nationwide",
+      "title": "Two Stanford students launch $2M startup accelerator for students nationwide",
+      "description": "Imported from RSS feed: Two Stanford students launch $2M startup accelerator for students nationwide",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "Two Stanford students launch $2M startup accelerator for students nationwide",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-03",
+      "lastModified": "2026-02-03",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "Two Stanford students launch $2M startup accelerator for students nationwide",
+        "metaDescription": "Two Stanford students launch $2M startup accelerator for students nationwide",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/02/two-stanford-students-launch-2m-startup-accelerator-for-students-nationwide/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/02/two-stanford-students-launch-2m-startup-accelerator-for-students-nationwide/"
+    },
+    {
+      "id": 43,
+      "slug": "adobe-animate-is-shutting-down-as-company-focuses-on-ai",
+      "title": "Adobe Animate is shutting down as company focuses on AI",
+      "description": "Imported from RSS feed: Adobe Animate is shutting down as company focuses on AI",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "Adobe Animate is shutting down as company focuses on AI",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-03",
+      "lastModified": "2026-02-03",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "Adobe Animate is shutting down as company focuses on AI",
+        "metaDescription": "Adobe Animate is shutting down as company focuses on AI",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/02/adobe-animate-is-shutting-down-as-company-focuses-on-ai/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/02/adobe-animate-is-shutting-down-as-company-focuses-on-ai/"
+    },
+    {
+      "id": 42,
+      "slug": "china-is-leading-the-fight-against-hidden-car-door-handles",
+      "title": "China is leading the fight against hidden car door handles",
+      "description": "Imported from RSS feed: China is leading the fight against hidden car door handles",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "China is leading the fight against hidden car door handles",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-03",
+      "lastModified": "2026-02-03",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "China is leading the fight against hidden car door handles",
+        "metaDescription": "China is leading the fight against hidden car door handles",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/02/china-is-leading-the-fight-against-hidden-car-door-handles/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/02/china-is-leading-the-fight-against-hidden-car-door-handles/"
+    },
+    {
+      "id": 41,
+      "slug": "elon-musk-s-spacex-officially-acquires-elon-musk-s-xai-with-plan-to-build-data-centers-in-space",
+      "title": "Elon Musk\u2019s SpaceX officially acquires Elon Musk\u2019s xAI, with plan to build data centers in space",
+      "description": "Imported from RSS feed: Elon Musk\u2019s SpaceX officially acquires Elon Musk\u2019s xAI, with plan to build data centers in space",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "Elon Musk\u2019s SpaceX officially acquires Elon Musk\u2019s xAI, with plan to build data centers in space",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-03",
+      "lastModified": "2026-02-03",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "Elon Musk\u2019s SpaceX officially acquires Elon Musk\u2019s xAI, with plan to build data centers in space",
+        "metaDescription": "Elon Musk\u2019s SpaceX officially acquires Elon Musk\u2019s xAI, with plan to build data centers in space",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/02/elon-musk-spacex-acquires-xai-data-centers-space-merger/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/02/elon-musk-spacex-acquires-xai-data-centers-space-merger/"
+    },
+    {
+      "id": 40,
+      "slug": "waymo-raises-16b-to-scale-robotaxi-fleet-internationally",
+      "title": "Waymo raises $16B to scale robotaxi fleet internationally",
+      "description": "Imported from RSS feed: Waymo raises $16B to scale robotaxi fleet internationally",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "Waymo raises $16B to scale robotaxi fleet internationally",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-03",
+      "lastModified": "2026-02-03",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "Waymo raises $16B to scale robotaxi fleet internationally",
+        "metaDescription": "Waymo raises $16B to scale robotaxi fleet internationally",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/02/waymo-raises-16-billion-round-to-scale-robotaxi-fleet-london-tokyo/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/02/waymo-raises-16-billion-round-to-scale-robotaxi-fleet-london-tokyo/"
+    },
+    {
+      "id": 39,
+      "slug": "fintech-ceo-and-forbes-30-under-30-alum-has-been-charged-for-alleged-fraud",
+      "title": "Fintech CEO and Forbes 30 Under 30 alum has been charged for alleged fraud",
+      "description": "Imported from RSS feed: Fintech CEO and Forbes 30 Under 30 alum has been charged for alleged fraud",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "Fintech CEO and Forbes 30 Under 30 alum has been charged for alleged fraud",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-03",
+      "lastModified": "2026-02-03",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "Fintech CEO and Forbes 30 Under 30 alum has been charged for alleged fraud",
+        "metaDescription": "Fintech CEO and Forbes 30 Under 30 alum has been charged for alleged fraud",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/02/fintech-ceo-and-forbes-30-under-30-alum-has-been-charged-for-alleged-fraud/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/02/fintech-ceo-and-forbes-30-under-30-alum-has-been-charged-for-alleged-fraud/"
+    },
+    {
+      "id": 38,
+      "slug": "meet-the-new-european-unicorns-of-2026",
+      "title": "Meet the new European unicorns of 2026",
+      "description": "Imported from RSS feed: Meet the new European unicorns of 2026",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "Meet the new European unicorns of 2026",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-02",
+      "lastModified": "2026-02-02",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "Meet the new European unicorns of 2026",
+        "metaDescription": "Meet the new European unicorns of 2026",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/01/31/meet-the-new-european-unicorns-of-2026/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/01/31/meet-the-new-european-unicorns-of-2026/"
+    },
+    {
+      "id": 37,
+      "slug": "bye-bye-corporate-conglomerates-hello-personal-conglomerates",
+      "title": "Bye-bye corporate conglomerates. Hello personal conglomerates.",
+      "description": "Imported from RSS feed: Bye-bye corporate conglomerates. Hello personal conglomerates.",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "Bye-bye corporate conglomerates. Hello personal conglomerates.",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-02",
+      "lastModified": "2026-02-02",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "Bye-bye corporate conglomerates. Hello personal conglomerates.",
+        "metaDescription": "Bye-bye corporate conglomerates. Hello personal conglomerates.",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/01/bye-bye-corporate-conglomerates-hello-personal-conglomerates/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/01/bye-bye-corporate-conglomerates-hello-personal-conglomerates/"
+    },
+    {
+      "id": 36,
+      "slug": "india-offers-zero-taxes-through-2047-to-lure-global-ai-workloads",
+      "title": "India offers zero taxes through 2047 to lure global AI workloads",
+      "description": "Imported from RSS feed: India offers zero taxes through 2047 to lure global AI workloads",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "India offers zero taxes through 2047 to lure global AI workloads",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-02",
+      "lastModified": "2026-02-02",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "India offers zero taxes through 2047 to lure global AI workloads",
+        "metaDescription": "India offers zero taxes through 2047 to lure global AI workloads",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/01/india-offers-zero-taxes-through-2047-to-lure-global-ai-workloads/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/01/india-offers-zero-taxes-through-2047-to-lure-global-ai-workloads/"
+    },
+    {
+      "id": 35,
+      "slug": "techcrunch-mobility-the-great-tesla-rebranding",
+      "title": "TechCrunch Mobility: The great Tesla rebranding",
+      "description": "Imported from RSS feed: TechCrunch Mobility: The great Tesla rebranding",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "TechCrunch Mobility: The great Tesla rebranding",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-02",
+      "lastModified": "2026-02-02",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "TechCrunch Mobility: The great Tesla rebranding",
+        "metaDescription": "TechCrunch Mobility: The great Tesla rebranding",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/01/techcrunch-mobility-the-great-tesla-rebranding/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/01/techcrunch-mobility-the-great-tesla-rebranding/"
+    },
+    {
+      "id": 34,
+      "slug": "indonesia-conditionally-lifts-ban-on-grok",
+      "title": "Indonesia \u2018conditionally\u2019 lifts ban on Grok",
+      "description": "Imported from RSS feed: Indonesia \u2018conditionally\u2019 lifts ban on Grok",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "Indonesia \u2018conditionally\u2019 lifts ban on Grok",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-02",
+      "lastModified": "2026-02-02",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "Indonesia \u2018conditionally\u2019 lifts ban on Grok",
+        "metaDescription": "Indonesia \u2018conditionally\u2019 lifts ban on Grok",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/01/indonesia-conditionally-lifts-ban-on-grok/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/01/indonesia-conditionally-lifts-ban-on-grok/"
+    },
+    {
+      "id": 33,
+      "slug": "amazon-s-melania-documentary-makes-7m-on-opening-weekend",
+      "title": "Amazon\u2019s \u2018Melania\u2019 documentary makes $7M on opening weekend",
+      "description": "Imported from RSS feed: Amazon\u2019s \u2018Melania\u2019 documentary makes $7M on opening weekend",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "Amazon\u2019s \u2018Melania\u2019 documentary makes $7M on opening weekend",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-02",
+      "lastModified": "2026-02-02",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "Amazon\u2019s \u2018Melania\u2019 documentary makes $7M on opening weekend",
+        "metaDescription": "Amazon\u2019s \u2018Melania\u2019 documentary makes $7M on opening weekend",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/01/amazons-melania-documentary-makes-7m-on-opening-weekend/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/01/amazons-melania-documentary-makes-7m-on-opening-weekend/"
+    },
+    {
+      "id": 32,
+      "slug": "why-tether-s-ceo-is-everywhere-right-now",
+      "title": "Why Tether\u2019s CEO is everywhere right now",
+      "description": "Imported from RSS feed: Why Tether\u2019s CEO is everywhere right now",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "Why Tether\u2019s CEO is everywhere right now",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-02",
+      "lastModified": "2026-02-02",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "Why Tether\u2019s CEO is everywhere right now",
+        "metaDescription": "Why Tether\u2019s CEO is everywhere right now",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/01/why-tethers-ceo-is-everywhere-right-now/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/01/why-tethers-ceo-is-everywhere-right-now/"
+    },
+    {
+      "id": 31,
+      "slug": "ai-layoffs-or-ai-washing",
+      "title": "AI layoffs or \u2018AI-washing\u2019?",
+      "description": "Imported from RSS feed: AI layoffs or \u2018AI-washing\u2019?",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "AI layoffs or \u2018AI-washing\u2019?",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-02",
+      "lastModified": "2026-02-02",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "AI layoffs or \u2018AI-washing\u2019?",
+        "metaDescription": "AI layoffs or \u2018AI-washing\u2019?",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/02/01/ai-layoffs-or-ai-washing/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/02/01/ai-layoffs-or-ai-washing/"
+    },
+    {
+      "id": 30,
+      "slug": "a16z-partner-kofi-ampadu-to-leave-firm-after-txo-program-pause",
+      "title": "a16z partner Kofi Ampadu to leave firm after TxO program pause",
+      "description": "Imported from RSS feed: a16z partner Kofi Ampadu to leave firm after TxO program pause",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "a16z partner Kofi Ampadu to leave firm after TxO program pause",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-01",
+      "lastModified": "2026-02-01",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "a16z partner Kofi Ampadu to leave firm after TxO program pause",
+        "metaDescription": "a16z partner Kofi Ampadu to leave firm after TxO program pause",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/01/30/a16z-partner-kofi-ampadu-to-leave-firm-after-txo-program-pause/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/01/30/a16z-partner-kofi-ampadu-to-leave-firm-after-txo-program-pause/"
+    },
+    {
+      "id": 29,
+      "slug": "homeboost-s-app-will-show-you-where-to-save-on-your-utility-bills",
+      "title": "HomeBoost\u2019s app will show you where to save on your utility bills",
+      "description": "Imported from RSS feed: HomeBoost\u2019s app will show you where to save on your utility bills",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "HomeBoost\u2019s app will show you where to save on your utility bills",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-01",
+      "lastModified": "2026-02-01",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "HomeBoost\u2019s app will show you where to save on your utility bills",
+        "metaDescription": "HomeBoost\u2019s app will show you where to save on your utility bills",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/01/31/homeboosts-app-will-show-you-where-to-save-on-your-utility-bills/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/01/31/homeboosts-app-will-show-you-where-to-save-on-your-utility-bills/"
+    },
+    {
+      "id": 28,
+      "slug": "nvidia-ceo-pushes-back-against-report-that-his-company-s-100b-openai-investment-has-stalled",
+      "title": "Nvidia CEO pushes back against report that his company\u2019s $100B OpenAI investment has stalled",
+      "description": "Imported from RSS feed: Nvidia CEO pushes back against report that his company\u2019s $100B OpenAI investment has stalled",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "Nvidia CEO pushes back against report that his company\u2019s $100B OpenAI investment has stalled",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-01",
+      "lastModified": "2026-02-01",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "Nvidia CEO pushes back against report that his company\u2019s $100B OpenAI investment has stalled",
+        "metaDescription": "Nvidia CEO pushes back against report that his company\u2019s $100B OpenAI investment has stalled",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/01/31/nvidia-ceo-pushes-back-against-report-that-his-companys-100b-openai-investment-has-stalled/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/01/31/nvidia-ceo-pushes-back-against-report-that-his-companys-100b-openai-investment-has-stalled/"
+    },
+    {
+      "id": 27,
+      "slug": "spacex-seeks-federal-approval-to-launch-1-million-solar-powered-satellite-data-centers",
+      "title": "SpaceX seeks federal approval to launch 1 million solar-powered satellite data centers",
+      "description": "Imported from RSS feed: SpaceX seeks federal approval to launch 1 million solar-powered satellite data centers",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "SpaceX seeks federal approval to launch 1 million solar-powered satellite data centers",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-01",
+      "lastModified": "2026-02-01",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "SpaceX seeks federal approval to launch 1 million solar-powered satellite data centers",
+        "metaDescription": "SpaceX seeks federal approval to launch 1 million solar-powered satellite data centers",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/01/31/spacex-seeks-federal-approval-to-launch-1-million-solar-powered-satellite-data-centers/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/01/31/spacex-seeks-federal-approval-to-launch-1-million-solar-powered-satellite-data-centers/"
+    },
+    {
+      "id": 26,
+      "slug": "waymo-reportedly-raising-a-16b-funding-round",
+      "title": "Waymo reportedly raising a $16B funding round",
+      "description": "Imported from RSS feed: Waymo reportedly raising a $16B funding round",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "Waymo reportedly raising a $16B funding round",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-02-01",
+      "lastModified": "2026-02-01",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "Waymo reportedly raising a $16B funding round",
+        "metaDescription": "Waymo reportedly raising a $16B funding round",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/01/31/waymo-reportedly-raising-a-16-billion-funding-round/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/01/31/waymo-reportedly-raising-a-16-billion-funding-round/"
+    },
+    {
+      "id": 25,
+      "slug": "bluesky-issues-its-first-transparency-report-noting-rise-in-user-reports-and-legal-demands",
+      "title": "Bluesky issues its first transparency report, noting rise in user reports and legal demands",
+      "description": "Imported from RSS feed: Bluesky issues its first transparency report, noting rise in user reports and legal demands",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "Bluesky issues its first transparency report, noting rise in user reports and legal demands",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-01-31",
+      "lastModified": "2026-01-31",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "Bluesky issues its first transparency report, noting rise in user reports and legal demands",
+        "metaDescription": "Bluesky issues its first transparency report, noting rise in user reports and legal demands",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/01/30/bluesky-issues-its-first-transparency-report-noting-rise-in-user-reports-and-legal-demands/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/01/30/bluesky-issues-its-first-transparency-report-noting-rise-in-user-reports-and-legal-demands/"
+    },
+    {
+      "id": 24,
+      "slug": "anthropic-brings-agentic-plug-ins-to-cowork",
+      "title": "Anthropic brings agentic plug-ins to Cowork",
+      "description": "Imported from RSS feed: Anthropic brings agentic plug-ins to Cowork",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "Anthropic brings agentic plug-ins to Cowork",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-01-31",
+      "lastModified": "2026-01-31",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "Anthropic brings agentic plug-ins to Cowork",
+        "metaDescription": "Anthropic brings agentic plug-ins to Cowork",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/01/30/anthropic-brings-agentic-plugins-to-cowork/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/01/30/anthropic-brings-agentic-plugins-to-cowork/"
+    },
+    {
+      "id": 23,
+      "slug": "uber-is-literally-in-the-driver-s-seat-when-it-comes-to-av-bets",
+      "title": "Uber is literally in the driver\u2019s seat when it comes to AV bets",
+      "description": "Imported from RSS feed: Uber is literally in the driver\u2019s seat when it comes to AV bets",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "Uber is literally in the driver\u2019s seat when it comes to AV bets",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-01-31",
+      "lastModified": "2026-01-31",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "Uber is literally in the driver\u2019s seat when it comes to AV bets",
+        "metaDescription": "Uber is literally in the driver\u2019s seat when it comes to AV bets",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/video/uber-is-literally-in-the-drivers-seat-when-it-comes-to-av-bets/"
+      },
+      "externalUrl": "https://techcrunch.com/video/uber-is-literally-in-the-drivers-seat-when-it-comes-to-av-bets/"
+    },
+    {
+      "id": 22,
+      "slug": "spacex-s-ipo-could-open-the-floodgates-and-secondaries-are-booming-in-the-meantime",
+      "title": "SpaceX\u2019s IPO could open the floodgates \u2014 and secondaries are booming in the meantime",
+      "description": "Imported from RSS feed: SpaceX\u2019s IPO could open the floodgates \u2014 and secondaries are booming in the meantime",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "SpaceX\u2019s IPO could open the floodgates \u2014 and secondaries are booming in the meantime",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-01-31",
+      "lastModified": "2026-01-31",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "SpaceX\u2019s IPO could open the floodgates \u2014 and secondaries are booming in the meantime",
+        "metaDescription": "SpaceX\u2019s IPO could open the floodgates \u2014 and secondaries are booming in the meantime",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/01/30/spacexs-ipo-could-open-the-floodgates-and-secondaries-are-booming-in-the-meantime/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/01/30/spacexs-ipo-could-open-the-floodgates-and-secondaries-are-booming-in-the-meantime/"
+    },
+    {
+      "id": 21,
+      "slug": "blue-origin-pauses-space-tourism-flights-to-focus-on-the-moon",
+      "title": "Blue Origin pauses space tourism flights to focus on the moon",
+      "description": "Imported from RSS feed: Blue Origin pauses space tourism flights to focus on the moon",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "Blue Origin pauses space tourism flights to focus on the moon",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-01-31",
+      "lastModified": "2026-01-31",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "Blue Origin pauses space tourism flights to focus on the moon",
+        "metaDescription": "Blue Origin pauses space tourism flights to focus on the moon",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/01/30/blue-origin-pauses-space-tourism-flights-to-focus-on-the-moon/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/01/30/blue-origin-pauses-space-tourism-flights-to-focus-on-the-moon/"
+    },
+    {
+      "id": 20,
+      "slug": "instagram-might-soon-let-you-remove-yourself-from-someone-s-close-friends-list",
+      "title": "Instagram might soon let you remove yourself from someone\u2019s Close Friends list",
+      "description": "Imported from RSS feed: Instagram might soon let you remove yourself from someone\u2019s Close Friends list",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "Instagram might soon let you remove yourself from someone\u2019s Close Friends list",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-01-31",
+      "lastModified": "2026-01-31",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "Instagram might soon let you remove yourself from someone\u2019s Close Friends list",
+        "metaDescription": "Instagram might soon let you remove yourself from someone\u2019s Close Friends list",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/01/30/instagram-might-soon-let-you-remove-yourself-from-someones-close-friends-list/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/01/30/instagram-might-soon-let-you-remove-yourself-from-someones-close-friends-list/"
+    },
+    {
+      "id": 19,
+      "slug": "informant-told-fbi-that-jeffrey-epstein-had-a-personal-hacker",
+      "title": "Informant told FBI that Jeffrey Epstein had a \u2018personal hacker\u2019",
+      "description": "Imported from RSS feed: Informant told FBI that Jeffrey Epstein had a \u2018personal hacker\u2019",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "Informant told FBI that Jeffrey Epstein had a \u2018personal hacker\u2019",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-01-31",
+      "lastModified": "2026-01-31",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "Informant told FBI that Jeffrey Epstein had a \u2018personal hacker\u2019",
+        "metaDescription": "Informant told FBI that Jeffrey Epstein had a \u2018personal hacker\u2019",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/01/30/informant-told-fbi-that-jeffrey-epstein-had-a-personal-hacker/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/01/30/informant-told-fbi-that-jeffrey-epstein-had-a-personal-hacker/"
+    },
+    {
+      "id": 18,
+      "slug": "openclaw-s-ai-assistants-are-now-building-their-own-social-network",
+      "title": "OpenClaw\u2019s AI assistants are now building their own social network",
+      "description": "Imported from RSS feed: OpenClaw\u2019s AI assistants are now building their own social network",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "OpenClaw\u2019s AI assistants are now building their own social network",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-01-31",
+      "lastModified": "2026-01-31",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "OpenClaw\u2019s AI assistants are now building their own social network",
+        "metaDescription": "OpenClaw\u2019s AI assistants are now building their own social network",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/01/30/openclaws-ai-assistants-are-now-building-their-own-social-network/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/01/30/openclaws-ai-assistants-are-now-building-their-own-social-network/"
+    },
+    {
+      "id": 17,
+      "slug": "onlyfans-considering-selling-majority-stake-to-architect-capital",
+      "title": "OnlyFans considering selling majority stake to Architect Capital",
+      "description": "Imported from RSS feed: OnlyFans considering selling majority stake to Architect Capital",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "OnlyFans considering selling majority stake to Architect Capital",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-01-31",
+      "lastModified": "2026-01-31",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "OnlyFans considering selling majority stake to Architect Capital",
+        "metaDescription": "OnlyFans considering selling majority stake to Architect Capital",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/01/30/onlyfans-considering-selling-majority-stake-to-architect-capital/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/01/30/onlyfans-considering-selling-majority-stake-to-architect-capital/"
+    },
+    {
+      "id": 16,
+      "slug": "physical-intelligence-stripe-veteran-lachy-groom-s-latest-bet-is-building-silicon-valley-s-buzziest-robot-brains",
+      "title": "Physical Intelligence, Stripe veteran Lachy Groom\u2019s latest bet, is building Silicon Valley\u2019s buzziest robot brains",
+      "description": "Imported from RSS feed: Physical Intelligence, Stripe veteran Lachy Groom\u2019s latest bet, is building Silicon Valley\u2019s buzziest robot brains",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "Physical Intelligence, Stripe veteran Lachy Groom\u2019s latest bet, is building Silicon Valley\u2019s buzziest robot brains",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-01-31",
+      "lastModified": "2026-01-31",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "Physical Intelligence, Stripe veteran Lachy Groom\u2019s latest bet, is building Silicon Valley\u2019s buzziest robot brains",
+        "metaDescription": "Physical Intelligence, Stripe veteran Lachy Groom\u2019s latest bet, is building Silicon Valley\u2019s buzziest robot brains",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/01/30/physical-intelligence-stripe-veteran-lachy-grooms-latest-bet-is-building-silicon-valleys-buzziest-robot-brains/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/01/30/physical-intelligence-stripe-veteran-lachy-grooms-latest-bet-is-building-silicon-valleys-buzziest-robot-brains/"
+    },
+    {
+      "id": 15,
+      "slug": "waymo-robotaxis-are-now-giving-rides-to-and-from-san-francisco-international-airport",
+      "title": "Waymo robotaxis are now giving rides to and from San Francisco International Airport",
+      "description": "Imported from RSS feed: Waymo robotaxis are now giving rides to and from San Francisco International Airport",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "Waymo robotaxis are now giving rides to and from San Francisco International Airport",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-01-30",
+      "lastModified": "2026-01-30",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "Waymo robotaxis are now giving rides to and from San Francisco International Airport",
+        "metaDescription": "Waymo robotaxis are now giving rides to and from San Francisco International Airport",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/01/29/waymo-sfo-airport-robotaxis/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/01/29/waymo-sfo-airport-robotaxis/"
+    },
+    {
+      "id": 14,
+      "slug": "apple-buys-israeli-startup-q-ai-as-the-ai-race-heats-up",
+      "title": "Apple buys Israeli startup Q.ai as the AI race heats up",
+      "description": "Imported from RSS feed: Apple buys Israeli startup Q.ai as the AI race heats up",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "Apple buys Israeli startup Q.ai as the AI race heats up",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-01-30",
+      "lastModified": "2026-01-30",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "Apple buys Israeli startup Q.ai as the AI race heats up",
+        "metaDescription": "Apple buys Israeli startup Q.ai as the AI race heats up",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/01/29/apple-buys-israeli-startup-q-ai-as-the-ai-race-heats-up/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/01/29/apple-buys-israeli-startup-q-ai-as-the-ai-race-heats-up/"
+    },
+    {
+      "id": 13,
+      "slug": "satya-nadella-insists-people-are-using-microsoft-s-copilot-ai-a-lot",
+      "title": "Satya Nadella insists people are using Microsoft\u2019s Copilot AI a lot",
+      "description": "Imported from RSS feed: Satya Nadella insists people are using Microsoft\u2019s Copilot AI a lot",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "Satya Nadella insists people are using Microsoft\u2019s Copilot AI a lot",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-01-30",
+      "lastModified": "2026-01-30",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "Satya Nadella insists people are using Microsoft\u2019s Copilot AI a lot",
+        "metaDescription": "Satya Nadella insists people are using Microsoft\u2019s Copilot AI a lot",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/01/29/satya-nadella-insists-people-are-using-microsofts-copilot-ai-a-lot/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/01/29/satya-nadella-insists-people-are-using-microsofts-copilot-ai-a-lot/"
+    },
+    {
+      "id": 12,
+      "slug": "fintech-firm-marquis-blames-hack-at-firewall-provider-sonicwall-for-its-data-breach",
+      "title": "Fintech firm Marquis blames hack at firewall provider SonicWall for its data breach",
+      "description": "Imported from RSS feed: Fintech firm Marquis blames hack at firewall provider SonicWall for its data breach",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "Fintech firm Marquis blames hack at firewall provider SonicWall for its data breach",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-01-30",
+      "lastModified": "2026-01-30",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "Fintech firm Marquis blames hack at firewall provider SonicWall for its data breach",
+        "metaDescription": "Fintech firm Marquis blames hack at firewall provider SonicWall for its data breach",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/01/29/fintech-firm-marquis-blames-hack-at-firewall-provider-sonicwall-for-its-data-breach/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/01/29/fintech-firm-marquis-blames-hack-at-firewall-provider-sonicwall-for-its-data-breach/"
+    },
+    {
+      "id": 11,
+      "slug": "microsoft-won-t-stop-buying-ai-chips-from-nvidia-amd-even-after-launching-its-own-nadella-says",
+      "title": "Microsoft won\u2019t stop buying AI chips from Nvidia, AMD, even after launching its own, Nadella says",
+      "description": "Imported from RSS feed: Microsoft won\u2019t stop buying AI chips from Nvidia, AMD, even after launching its own, Nadella says",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "Microsoft won\u2019t stop buying AI chips from Nvidia, AMD, even after launching its own, Nadella says",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-01-30",
+      "lastModified": "2026-01-30",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "Microsoft won\u2019t stop buying AI chips from Nvidia, AMD, even after launching its own, Nadella says",
+        "metaDescription": "Microsoft won\u2019t stop buying AI chips from Nvidia, AMD, even after launching its own, Nadella says",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/01/29/microsoft-wont-stop-buying-ai-chips-from-nvidia-amd-even-after-launching-its-own-nadella-says/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/01/29/microsoft-wont-stop-buying-ai-chips-from-nvidia-amd-even-after-launching-its-own-nadella-says/"
+    },
+    {
+      "id": 10,
+      "slug": "medium-gives-employees-friday-off-to-participate-in-national-strike-protesting-ice",
+      "title": "Medium gives employees Friday off to participate in national strike protesting ICE",
+      "description": "Imported from RSS feed: Medium gives employees Friday off to participate in national strike protesting ICE",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "Medium gives employees Friday off to participate in national strike protesting ICE",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-01-30",
+      "lastModified": "2026-01-30",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "Medium gives employees Friday off to participate in national strike protesting ICE",
+        "metaDescription": "Medium gives employees Friday off to participate in national strike protesting ICE",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/01/29/medium-gives-employees-friday-off-to-participate-in-national-strike-protesting-ice/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/01/29/medium-gives-employees-friday-off-to-participate-in-national-strike-protesting-ice/"
+    },
+    {
+      "id": 9,
+      "slug": "amazon-is-reportedly-in-talks-to-invest-50b-in-openai",
+      "title": "Amazon is reportedly in talks to invest $50B in OpenAI",
+      "description": "Imported from RSS feed: Amazon is reportedly in talks to invest $50B in OpenAI",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "Amazon is reportedly in talks to invest $50B in OpenAI",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-01-30",
+      "lastModified": "2026-01-30",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "Amazon is reportedly in talks to invest $50B in OpenAI",
+        "metaDescription": "Amazon is reportedly in talks to invest $50B in OpenAI",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/01/29/amazon-is-reportedly-in-talks-to-invest-50-billion-in-openai/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/01/29/amazon-is-reportedly-in-talks-to-invest-50-billion-in-openai/"
+    },
+    {
+      "id": 8,
+      "slug": "elon-musk-s-spacex-tesla-and-xai-in-talks-to-merge-according-to-reports",
+      "title": "Elon Musk\u2019s SpaceX, Tesla, and xAI in talks to merge, according to reports",
+      "description": "Imported from RSS feed: Elon Musk\u2019s SpaceX, Tesla, and xAI in talks to merge, according to reports",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "Elon Musk\u2019s SpaceX, Tesla, and xAI in talks to merge, according to reports",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-01-30",
+      "lastModified": "2026-01-30",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "Elon Musk\u2019s SpaceX, Tesla, and xAI in talks to merge, according to reports",
+        "metaDescription": "Elon Musk\u2019s SpaceX, Tesla, and xAI in talks to merge, according to reports",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/01/29/elon-musk-spacex-tesla-xai-merger-talks-ipo-reuters/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/01/29/elon-musk-spacex-tesla-xai-merger-talks-ipo-reuters/"
+    },
+    {
+      "id": 7,
+      "slug": "guys-i-don-t-think-tim-cook-knows-how-to-monetize-ai",
+      "title": "Guys, I don\u2019t think Tim Cook knows how to monetize AI",
+      "description": "Imported from RSS feed: Guys, I don\u2019t think Tim Cook knows how to monetize AI",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "Guys, I don\u2019t think Tim Cook knows how to monetize AI",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-01-30",
+      "lastModified": "2026-01-30",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "Guys, I don\u2019t think Tim Cook knows how to monetize AI",
+        "metaDescription": "Guys, I don\u2019t think Tim Cook knows how to monetize AI",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/01/29/guys-i-dont-think-tim-cook-knows-how-to-monetize-ai/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/01/29/guys-i-dont-think-tim-cook-knows-how-to-monetize-ai/"
+    },
+    {
+      "id": 6,
+      "slug": "the-iphone-just-had-its-best-quarter-ever",
+      "title": "The iPhone just had its best quarter ever",
+      "description": "Imported from RSS feed: The iPhone just had its best quarter ever",
+      "content": {
+        "introduction": "This post was imported from an external blog. Read the full article at the link below.",
+        "sections": [],
+        "conclusion": "",
+        "keyTakeaways": []
+      },
+      "excerpt": "The iPhone just had its best quarter ever",
+      "author": "Mohammad Hammad Sarfraz",
+      "publishDate": "2026-01-30",
+      "lastModified": "2026-01-30",
+      "readTime": "5 min read",
+      "category": "Technology",
+      "tags": [
+        "External",
+        "Blog"
+      ],
+      "image": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
+      "featured": false,
+      "views": 0,
+      "seo": {
+        "metaTitle": "The iPhone just had its best quarter ever",
+        "metaDescription": "The iPhone just had its best quarter ever",
+        "keywords": [
+          "blog",
+          "external"
+        ],
+        "ogImage": "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80",
+        "canonicalUrl": "https://techcrunch.com/2026/01/29/the-iphone-just-had-its-best-quarter-ever/"
+      },
+      "externalUrl": "https://techcrunch.com/2026/01/29/the-iphone-just-had-its-best-quarter-ever/"
     }
   ],
   "categories": [
     {
-      "name": "Backend Development",
-      "slug": "backend-development",
-      "description": "Deep dives into backend engineering, API design, and scalable systems",
-      "count": 1
-    },
-    {
-      "name": "Database",
-      "slug": "database",
-      "description": "Database optimization, migrations, and best practices",
-      "count": 1
-    },
-    {
-      "name": "DevOps",
-      "slug": "devops",
-      "description": "CI/CD, deployment strategies, and infrastructure automation",
-      "count": 1
-    },
-    {
-      "name": "Career",
-      "slug": "career",
-      "description": "Career advice, growth strategies, and industry insights",
-      "count": 1
-    },
-    {
-      "name": "System Design",
-      "slug": "system-design",
-      "description": "Architecture patterns, scalability, and system design principles",
-      "count": 1
+      "name": "Technology",
+      "slug": "technology",
+      "description": "Latest updates and curated posts from external sources",
+      "count": 103
     }
   ],
   "settings": {

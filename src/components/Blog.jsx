@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { getBlogsData } from '../services/dataService';
+import { getBlogsData, getPortfolioData } from '../services/dataService';
 import './Blog.css';
 
 function Blog() {
@@ -10,13 +10,18 @@ function Blog() {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredBlogs, setFilteredBlogs] = useState([]);
+  const [authorName, setAuthorName] = useState('Mohammad Hammad Sarfraz');
+  const siteUrl = import.meta.env.VITE_SITE_URL || 'https://hammad-sarfraz.netlify.app';
 
   useEffect(() => {
-    getBlogsData()
-      .then(data => {
+    Promise.all([getBlogsData(), getPortfolioData()])
+      .then(([data, portfolio]) => {
         setBlogs(data.blogs || []);
         setCategories(data.categories || []);
         setFilteredBlogs(data.blogs || []);
+        if (portfolio?.personal?.name) {
+          setAuthorName(portfolio.personal.name);
+        }
       })
       .catch(error => console.error('Error loading blog data:', error));
   }, []);
@@ -46,20 +51,20 @@ function Blog() {
   return (
     <>
       <Helmet>
-        <title>Blog | Muhammad Kamal - Backend Engineering & Tech Insights</title>
+        <title>{`Blog | ${authorName} - Tech Insights`}</title>
         <meta name="description" content="Technical blog featuring insights on Django, Python, PostgreSQL, AWS, system design, and backend engineering best practices from production experience." />
         <meta name="keywords" content="backend engineering blog, django tutorials, python development, postgresql optimization, aws devops, system design, tech blog" />
-        <link rel="canonical" href="https://oykamal.netlify.app/blog" />
+        <link rel="canonical" href={`${siteUrl}/blog`} />
         
         {/* Open Graph */}
-        <meta property="og:title" content="Blog | Muhammad Kamal - Backend Engineering Insights" />
+        <meta property="og:title" content={`Blog | ${authorName} - Tech Insights`} />
         <meta property="og:description" content="Technical articles on Django, Python, PostgreSQL, system design, and production engineering." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://oykamal.netlify.app/blog" />
+        <meta property="og:url" content={`${siteUrl}/blog`} />
         
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Blog | Muhammad Kamal - Backend Engineering" />
+        <meta name="twitter:title" content={`Blog | ${authorName} - Tech Insights`} />
         <meta name="twitter:description" content="Technical insights on Django, Python, PostgreSQL, and system design from production experience." />
       </Helmet>
 

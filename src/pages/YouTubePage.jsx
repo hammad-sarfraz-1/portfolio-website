@@ -3,24 +3,26 @@ import SEO from '../components/SEO';
 import './YouTubePage.css';
 
 function YouTubePage() {
+  const siteUrl = import.meta.env.VITE_SITE_URL || 'https://hammad-sarfraz.netlify.app';
+
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    "name": "YouTube Channels - Muhammad Kamal",
-    "description": "Tech content, coding tutorials, career advice, and lifestyle vlogs by Muhammad Kamal",
+    "name": "YouTube Channels",
+    "description": "Tech content, coding tutorials, and software engineering insights",
     "author": {
       "@type": "Person",
-      "name": "Muhammad Kamal"
+      "name": "Mohammad Hammad Sarfraz"
     }
   };
 
   return (
     <div className="youtube-page">
       <SEO
-        title="YouTube Channels - Muhammad Kamal | Tech Content & Coding Tutorials"
-        description="Discover my YouTube channels featuring tech insights, coding tutorials, career advice, and lifestyle content. Subscribe to @oykamal and @kamalkecoding for daily updates."
-        name="Muhammad Kamal"
-        url="https://oykamal.netlify.app/youtube"
+        title="YouTube Channels | Mohammad Hammad Sarfraz"
+        description="YouTube content featuring software engineering, coding, and technology insights."
+        name="hammadsarfraz"
+        url={`${siteUrl}/youtube`}
         structuredData={structuredData}
       />
       <YouTube />

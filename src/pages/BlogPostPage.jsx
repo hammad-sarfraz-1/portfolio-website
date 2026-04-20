@@ -1,22 +1,24 @@
 import { useState, useEffect } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { getBlogBySlug, getBlogsData } from '../services/dataService';
+import { getBlogBySlug, getBlogsData, getPortfolioData } from '../services/dataService';
 import './BlogPostPage.css';
 
 function BlogPostPage() {
   const { slug } = useParams();
-  const navigate = useNavigate();
   const [post, setPost] = useState(null);
   const [relatedPosts, setRelatedPosts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [portfolioData, setPortfolioData] = useState(null);
+  const siteUrl = import.meta.env.VITE_SITE_URL || 'https://hammad-sarfraz.netlify.app';
 
   useEffect(() => {
     Promise.all([
       getBlogBySlug(slug),
-      getBlogsData()
+      getBlogsData(),
+      getPortfolioData()
     ])
-      .then(([foundPost, data]) => {
+      .then(([foundPost, data, portfolio]) => {
         if (foundPost) {
           setPost(foundPost);
           
@@ -26,6 +28,7 @@ function BlogPostPage() {
             .slice(0, 3);
           setRelatedPosts(related);
         }
+        setPortfolioData(portfolio);
         setLoading(false);
       })
       .catch(error => {
@@ -81,12 +84,12 @@ function BlogPostPage() {
     "author": {
       "@type": "Person",
       "name": post.author,
-      "url": "https://oykamal.netlify.app"
+      "url": siteUrl
     },
     "publisher": {
       "@type": "Person",
-      "name": "Muhammad Kamal",
-      "url": "https://oykamal.netlify.app"
+      "name": portfolioData?.personal?.name || post.author,
+      "url": siteUrl
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
@@ -158,7 +161,7 @@ function BlogPostPage() {
               <div className="author-info">
                 <div className="author-avatar">
                   <img 
-                    src="https://ui-avatars.com/api/?name=Muhammad+Kamal&size=80&background=60a5fa&color=ffffff" 
+                    src={portfolioData?.personal?.image || `https://ui-avatars.com/api/?name=${encodeURIComponent(post.author)}&size=80&background=60a5fa&color=ffffff`} 
                     alt={post.author}
                   />
                 </div>

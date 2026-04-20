@@ -1,14 +1,21 @@
 import { Helmet } from 'react-helmet-async';
 import PropTypes from 'prop-types';
 
+const SITE_URL = import.meta.env.VITE_SITE_URL || 'https://hammad-sarfraz.netlify.app';
+const DEFAULT_IMAGE =
+  'https://ui-avatars.com/api/?name=Mohammad+Hammad+Sarfraz&size=1200&background=111827&color=ffffff';
+const DEFAULT_KEYWORDS =
+  'Mohammad Hammad Sarfraz, Hammad Sarfraz, Software Engineer, Backend Engineer, Python, Django, Portfolio';
+const TWITTER_HANDLE = import.meta.env.VITE_TWITTER_HANDLE || '';
+
 const SEO = ({ 
   title, 
   description, 
   name, 
   type = 'website',
-  url = 'https://oykamal.netlify.app/',
-  image = 'https://ui-avatars.com/api/?name=Muhammad+Kamal&size=1200&background=111827&color=ffffff',
-  keywords = 'Muhammad Kamal, oykamal, Backend Engineer, Python Developer, Django, DRF, PostgreSQL, AWS, Software Engineer',
+  url = SITE_URL,
+  image = DEFAULT_IMAGE,
+  keywords = DEFAULT_KEYWORDS,
   structuredData
 }) => {
   return (
@@ -26,7 +33,7 @@ const SEO = ({
       <meta property="og:url" content={url} />
       
       {/* Twitter tags */}
-      <meta name="twitter:creator" content="@oykamal" />
+      {TWITTER_HANDLE ? <meta name="twitter:creator" content={TWITTER_HANDLE} /> : null}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />

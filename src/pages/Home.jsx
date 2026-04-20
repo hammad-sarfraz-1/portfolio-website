@@ -12,6 +12,13 @@ import Education from '../components/Education';
 import Contact from '../components/Contact';
 
 function Home({ portfolioData }) {
+  const siteUrl = import.meta.env.VITE_SITE_URL || 'https://hammad-sarfraz.netlify.app';
+  const personName = portfolioData.personal?.name || 'Mohammad Hammad Sarfraz';
+  const brandName = portfolioData.personal?.brandName || 'portfolio';
+  const jobTitle = portfolioData.personal?.title || 'Software Engineer';
+  const location = portfolioData.personal?.location || 'Islamabad, Pakistan';
+  const youtubeChannels = portfolioData.youtube?.channels || [];
+
   // Generate structured data for SEO
   const getSkillsList = () => {
     if (!portfolioData.skills) return [];
@@ -21,18 +28,18 @@ function Home({ portfolioData }) {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Person",
-    "name": "Muhammad Kamal",
-    "alternateName": ["oykamal", "oyekamal", "kamal"],
-    "jobTitle": "Senior Backend Engineer",
+    "name": personName,
+    "alternateName": [brandName],
+    "jobTitle": jobTitle,
     "description": portfolioData.personal?.bio,
-    "url": "https://oykamal.netlify.app",
+    "url": siteUrl,
     "image": portfolioData.personal?.image,
     "email": portfolioData.personal?.email,
     "telephone": portfolioData.personal?.phone,
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "Islamabad",
-      "addressCountry": "Pakistan"
+      "addressLocality": location.split(',')[0]?.trim() || 'Islamabad',
+      "addressCountry": location.split(',')[1]?.trim() || 'Pakistan'
     },
     "sameAs": portfolioData.social?.map(s => s.url) || [],
     "knowsAbout": getSkillsList(),
@@ -49,10 +56,11 @@ function Home({ portfolioData }) {
   return (
     <div className="home-page">
       <SEO
-        title="oykamal - Muhammad Kamal | Senior Backend Engineer | Python Django PostgreSQL AWS"
-        description="oykamal (Muhammad Kamal) - Senior Backend Engineer with 4+ years experience. Expert in Python, Django, DRF, PostgreSQL, AWS, Kafka, Redis. Building scalable production systems in Islamabad, Pakistan."
-        name="oykamal"
-        keywords="oykamal, oyekamal, Muhammad Kamal, kamal backend engineer, python backend developer, django developer pakistan, senior backend engineer, python django postgresql, aws developer, backend engineer islamabad"
+        title={`${brandName} - ${personName} | ${jobTitle}`}
+        description={`${personName} - ${portfolioData.personal?.bio || 'Portfolio website.'}`}
+        name={brandName}
+        url={siteUrl}
+        keywords={`${personName}, ${brandName}, software engineer, backend engineer, portfolio, Pakistan`}
         structuredData={structuredData}
       />
       <Hero
@@ -69,11 +77,11 @@ function Home({ portfolioData }) {
       />
 
       {/* YouTube Teaser Section */}
-      <section className="youtube-teaser">
+      {youtubeChannels.length > 0 ? <section className="youtube-teaser">
         <div className="container">
           <h2 className="section-title">My YouTube Channels</h2>
           <p className="teaser-subtitle">
-            Creating content about tech, coding, and lifestyle
+            Creating content about tech, coding, and software engineering
           </p>
           <div className="teaser-content">
             <div className="teaser-icon">
@@ -82,11 +90,14 @@ function Home({ portfolioData }) {
               </svg>
             </div>
             <div className="teaser-text">
-              <h3>2 Active Channels</h3>
-              <p>Daily content covering tech insights, coding tutorials, career advice, and more!</p>
+              <h3>{youtubeChannels.length} Active Channels</h3>
+              <p>Content covering software engineering, practical development, and technology topics.</p>
               <ul className="teaser-highlights">
-                <li>🎬 <strong>@oykamal</strong> - Blogs, vlogs & tech insights</li>
-                <li>💻 <strong>@kamalkecoding</strong> - Coding tutorials & best practices</li>
+                {youtubeChannels.slice(0, 2).map((channel) => (
+                  <li key={channel.id || channel.handle}>
+                    🎬 <strong>{channel.handle || channel.name}</strong> - {channel.description}
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
@@ -94,7 +105,7 @@ function Home({ portfolioData }) {
             Explore My YouTube Channels →
           </Link>
         </div>
-      </section>
+      </section> : null}
 
       <Contact
         personal={portfolioData.personal}

@@ -6,6 +6,7 @@ const Navigation = ({ portfolioData }) => {
     const location = useLocation();
     const isYouTubePage = location.pathname === '/youtube';
     const isBlogPage = location.pathname.startsWith('/blog');
+    const hasYouTubeChannels = Boolean(portfolioData?.youtube?.channels?.length);
 
     const handleDownloadCV = () => {
         if (portfolioData) {
@@ -36,7 +37,7 @@ const Navigation = ({ portfolioData }) => {
                     <li><a href="/#skills" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('skills'); }}>Skills</a></li>
                     <li><Link to="/blog" className={`nav-link ${isBlogPage ? 'active' : ''}`}>Blog</Link></li>
                     <li><a href="/#education" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('education'); }}>Education</a></li>
-                    <li><Link to="/youtube" className={`nav-link ${isYouTubePage ? 'active' : ''}`}>YouTube</Link></li>
+                    {hasYouTubeChannels ? <li><Link to="/youtube" className={`nav-link ${isYouTubePage ? 'active' : ''}`}>YouTube</Link></li> : null}
                     <li><a href="/#contact" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }}>Contact</a></li>
                 </ul>
                 <button className="btn btn-primary" onClick={handleDownloadCV}>
