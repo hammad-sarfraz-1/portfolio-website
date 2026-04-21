@@ -28,7 +28,9 @@ const Navigation = ({ portfolioData }) => {
     return (
         <nav className="nav" id="nav">
             <div className="nav-container">
-                <Link to="/" className="nav-logo">{portfolioData?.personal?.brandName || 'Portfolio'}</Link>
+                <Link to="/" className="nav-logo" aria-label="Home">
+                    <span className="nav-logo-icon" role="img" aria-hidden="true">💻</span>
+                </Link>
                 <ul className="nav-menu">
                     <li><a href="/#home" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('home'); }}>Home</a></li>
                     <li><a href="/#about" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('about'); }}>About</a></li>
