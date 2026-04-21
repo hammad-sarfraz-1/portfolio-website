@@ -5,8 +5,7 @@
 
 // GitHub raw content base URL
 // Format: https://raw.githubusercontent.com/USERNAME/REPO_NAME/BRANCH_NAME/
-const GITHUB_RAW_BASE_URL = import.meta.env.VITE_GITHUB_DATA_URL ||
-  'https://raw.githubusercontent.com/hammad-sarfraz-1/portfolio-database/main/';
+const GITHUB_RAW_BASE_URL = (import.meta.env.VITE_GITHUB_DATA_URL || '').trim();
 
 // Fallback to local files if GitHub fetch fails
 const LOCAL_FALLBACK = true;
@@ -18,6 +17,10 @@ const LOCAL_FALLBACK = true;
  */
 async function fetchFromGitHub(filename) {
   try {
+    if (!GITHUB_RAW_BASE_URL) {
+      throw new Error(`VITE_GITHUB_DATA_URL is not configured for ${filename}`);
+    }
+
     const githubUrl = `${GITHUB_RAW_BASE_URL}${filename}`;
     console.log(`Fetching ${filename} from GitHub:`, githubUrl);
     
